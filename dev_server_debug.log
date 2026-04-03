@@ -1,0 +1,21 @@
+node:fs:443
+    return binding.readFileUtf8(path, stringToFlags(options.flag));
+                   ^
+
+Error: ECANCELED: operation canceled, read
+    at Object.readFileSync (node:fs:443:20)
+    at defaultLoadImpl (node:internal/modules/cjs/loader:1128:17)
+    at loadSource (node:internal/modules/cjs/loader:1761:20)
+    at Object..js (node:internal/modules/cjs/loader:1893:44)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1491:12)
+    at mod.require (/Users/amitsrivastava/Desktop/ICBD-2026/node_modules/next/dist/server/require-hook.js:68:28) {
+  errno: -89,
+  code: 'ECANCELED',
+  syscall: 'read'
+}
+
+Node.js v23.8.0

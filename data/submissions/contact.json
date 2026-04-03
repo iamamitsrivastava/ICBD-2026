@@ -1,0 +1,35 @@
+[
+  {
+    "id": "1770891810435",
+    "name": "Test User 2",
+    "email": "testuser2@example.com",
+    "phone": "1234567890",
+    "message": "This is a test message.",
+    "submittedAt": "2026-02-12T10:23:30.435Z"
+  },
+  {
+    "id": "1770891878051",
+    "name": "Test User 2",
+    "email": "testuser2@example.com",
+    "phone": "1234567890",
+    "message": "This is a test message.",
+    "submittedAt": "2026-02-12T10:24:38.051Z"
+  },
+  {
+    "id": "1771917058461",
+    "name": "Amit Srivastava",
+    "email": "2303051240028@paruluniversity.ac.in",
+    "phone": "9876543210",
+    "message": "hi",
+    "submittedAt": "2026-02-24T07:10:58.461Z"
+  },
+  {
+    "id": "1771918994248",
+    "name": "John Doe",
+    "email": "agent@test.com",
+    "phone": "9876543210",
+    "message": "hello",
+    "submittedAt": "2026-02-24T07:43:14.248Z",
+    "forwardTo": "2303051240028@paruluniversity.ac.in"
+  }
+]

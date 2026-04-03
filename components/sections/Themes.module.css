@@ -1,0 +1,146 @@
+.themes {
+    background-color: white;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    gap: 4rem;
+    align-items: start;
+}
+
+.tabList {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.tabBtn {
+    text-align: left;
+    padding: 1.25rem 1.75rem;
+    border: 1px solid var(--color-border);
+    background: transparent;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: var(--font-heading);
+    font-weight: 500;
+    color: var(--color-text-muted);
+    font-size: 1rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.tabBtn:hover {
+    background-color: var(--color-bg);
+    color: var(--color-primary);
+    transform: translateX(5px);
+}
+
+.tabBtn[data-active="true"] {
+    background-color: #0f172a;
+    /* Deep blue/black */
+    color: white;
+    border-color: #0f172a;
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.2);
+    font-weight: 600;
+    transform: translateX(10px);
+}
+
+.contentPanel {
+    padding: 1rem;
+    min-height: 400px;
+    animation: fadeIn 0.4s ease-out;
+}
+
+.panelTitle {
+    font-size: 2.5rem;
+    margin-bottom: 2.5rem;
+    color: #0f172a;
+    font-family: var(--font-heading);
+}
+
+.subThemeList {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* Two columns for sub-themes as per image */
+    gap: 1.5rem;
+}
+
+.subThemeItem {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1.1rem;
+    padding: 1rem 1.5rem;
+    background: white;
+    border-radius: 8px;
+    border: 1px solid var(--color-border);
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+}
+
+.subThemeItem:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    border-color: var(--color-secondary);
+}
+
+.bullet {
+    color: var(--color-secondary);
+    min-width: 24px;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 900px) {
+    .container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .tabList {
+        flex-direction: row;
+        overflow-x: auto;
+        padding-bottom: 1rem;
+        gap: 1rem;
+        /* Hide scrollbar */
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+
+    .tabList::-webkit-scrollbar {
+        display: none;
+    }
+
+    .tabBtn {
+        white-space: nowrap;
+        padding: 1rem 1.5rem;
+        min-width: fit-content;
+    }
+
+    .tabBtn:hover,
+    .tabBtn[data-active="true"] {
+        transform: none;
+    }
+
+    .subThemeList {
+        grid-template-columns: 1fr;
+    }
+
+    .panelTitle {
+        font-size: 2rem;
+        text-align: center;
+    }
+}

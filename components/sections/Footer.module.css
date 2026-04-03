@@ -1,0 +1,363 @@
+.venue {
+    background-color: white;
+    padding: 8rem 0;
+}
+
+.venueGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    /* align-items: center; removed to allow matching height */
+}
+
+.mapWrapper {
+    width: 100%;
+    height: 100%;
+    /* Match height of the grid cell */
+    min-height: 400px;
+    /* Ensure at least some height if text is short */
+    background-color: var(--color-bg);
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+}
+
+.map {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(0.2);
+}
+
+/* Statistics Grid */
+.statsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+    margin-top: 3rem;
+}
+
+.statCard {
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+    padding: 2.5rem 1.5rem;
+    border-radius: 20px;
+    border: 2px solid transparent;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    position: relative;
+    overflow: hidden;
+    animation: fadeInUp 0.6s ease-out forwards;
+    opacity: 0;
+}
+
+/* Staggered animation delays */
+.statCard:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.statCard:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.statCard:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.statCard:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.statCard::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--color-secondary), #f59e0b);
+    transform: scaleX(0);
+    transition: transform 0.4s ease;
+}
+
+.statCard:hover::before {
+    transform: scaleX(1);
+}
+
+.statCard:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+    border-color: rgba(218, 165, 32, 0.2);
+}
+
+.statCardHighlight {
+    border: 2px solid var(--color-secondary);
+    background: linear-gradient(135deg, rgba(218, 165, 32, 0.08) 0%, rgba(255, 255, 255, 1) 100%);
+    box-shadow: 0 6px 20px rgba(218, 165, 32, 0.15);
+}
+
+.statCardHighlight::before {
+    background: linear-gradient(90deg, var(--color-secondary), #fbbf24);
+}
+
+.statCardHighlight:hover {
+    border-color: var(--color-secondary);
+    box-shadow: 0 16px 40px rgba(218, 165, 32, 0.25);
+}
+
+.statIcon {
+    font-size: 3rem;
+    margin-bottom: 1.25rem;
+    display: inline-block;
+    padding: 1rem;
+    background: linear-gradient(135deg, rgba(218, 165, 32, 0.1), rgba(218, 165, 32, 0.05));
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.statCard:hover .statIcon {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.statNumber {
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: var(--color-secondary);
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.5px;
+    line-height: 1.2;
+}
+
+.statTitle {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: 0.5rem;
+    transition: color 0.3s ease;
+}
+
+.statCard:hover .statTitle {
+    color: var(--color-secondary);
+}
+
+.statDescription {
+    font-size: 0.875rem;
+    color: var(--color-text-muted);
+    line-height: 1.5;
+}
+
+/* .footer improved styles */
+
+/* .footer simplified styles */
+
+.footer {
+    background-color: #0f172a;
+    color: white;
+    padding: 4rem 0 2rem;
+    font-family: var(--font-body);
+    position: relative;
+}
+
+.container {
+    max-width: var(--spacing-container);
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.footerGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3rem;
+    margin-bottom: 3rem;
+}
+
+.footerCol {
+    display: flex;
+    flex-direction: column;
+}
+
+.footerHeading {
+    color: white;
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+
+.footerList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.footerList li a {
+    color: #cbd5e1;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color 0.2s;
+}
+
+.footerList li a:hover {
+    color: var(--color-secondary);
+}
+
+/* Branding Column */
+.brandingCol {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.footerBrand {
+    margin-bottom: 1rem;
+}
+
+.logoWrapper {
+    width: 200px;
+    height: 60px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footerConferenceTitle {
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-secondary);
+    margin-bottom: 0.5rem;
+}
+
+.footerConferenceSubtitle {
+    color: #94a3b8;
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+}
+
+.footerMeta {
+    color: white;
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.footerMeta p:first-child {
+    font-weight: 400;
+    color: white;
+    font-size: inherit;
+    letter-spacing: normal;
+    margin-bottom: 0;
+}
+
+.socialIcons {
+    display: flex;
+    gap: 1rem;
+}
+
+.socialIconLink {
+    color: #cbd5e1;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+}
+
+.socialIconLink:hover {
+    background: var(--color-secondary);
+    color: white;
+}
+
+.copy {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 2rem;
+    text-align: center;
+    color: #64748b;
+    font-size: 0.85rem;
+}
+
+@media (max-width: 992px) {
+    .venueGrid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .mapWrapper {
+        min-height: 300px;
+    }
+
+    .statsGrid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+        margin-top: 2rem;
+    }
+
+    .footerGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .brandingCol {
+        align-items: flex-start;
+        text-align: left;
+        grid-column: span 2;
+        margin-top: 2rem;
+    }
+
+    .footerMeta {
+        padding-left: 0;
+    }
+}
+
+@media (max-width: 576px) {
+    .footer {
+        padding: 4rem 0 2rem;
+    }
+
+    .footerGrid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+
+    .brandingCol {
+        grid-column: span 1;
+        align-items: center;
+        text-align: center;
+        margin-top: 1rem;
+    }
+
+    .footerMeta {
+        padding-bottom: 1rem;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .logoWrapper {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .socialIcons {
+        justify-content: center;
+    }
+}

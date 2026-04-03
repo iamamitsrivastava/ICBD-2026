@@ -1,0 +1,516 @@
+.container {
+    padding-top: 8rem;
+    padding-bottom: 4rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.titleSection {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.title {
+    color: #0F172A;
+    /* Primary Blue */
+    font-weight: 700;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    font-family: var(--font-heading, sans-serif);
+}
+
+.subtitle {
+    color: #475569;
+    /* Slate 600 */
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Key Dates Section */
+.datesSection {
+    margin-bottom: 4rem;
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e2e8f0;
+}
+
+.datesTitle {
+    color: #0F172A;
+    font-size: 1.75rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    border-bottom: 2px solid #D4AF37;
+    /* Gold underline */
+    display: inline-block;
+    padding-bottom: 0.5rem;
+}
+
+.datesGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
+.dateCard {
+    background: #f8fafc;
+    padding: 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+    border-top: 4px solid #D4AF37;
+    /* Gold accent */
+    transition: transform 0.2s;
+}
+
+.dateCard:hover {
+    transform: translateY(-5px);
+}
+
+.dateLabel {
+    display: block;
+    font-size: 0.9rem;
+    color: #64748b;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 600;
+}
+
+.dateValue {
+    font-size: 1.25rem;
+    color: #0F172A;
+    font-weight: 700;
+}
+
+
+/* Table Section */
+.tableContainer {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin-bottom: 4rem;
+    border: 1px solid #e2e8f0;
+}
+
+.tableHeader {
+    padding: 2rem;
+    border-bottom: 1px solid #e2e8f0;
+    background: #0F172A;
+    /* Primary Blue */
+    color: white;
+    text-align: center;
+}
+
+.tableTitle {
+    color: white;
+    font-size: 1.75rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+.tableWrapper {
+    overflow-x: auto;
+}
+
+.feeTable {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    min-width: 600px;
+}
+
+.feeTable th,
+.feeTable td {
+    padding: 1.25rem 1.5rem;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.feeTable thead th {
+    background: #f1f5f9;
+    /* Slate 100 */
+    color: #0F172A;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 0.05em;
+}
+
+.feeTable tbody tr:hover {
+    background-color: #f8fafc;
+}
+
+.feeTable tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.categoryCell {
+    font-weight: 600;
+    color: #0F172A;
+}
+
+.feeCell {
+    font-weight: 700;
+    color: #C5192D;
+    /* Accent Red or potentially Gold */
+}
+
+.ctaSection {
+    text-align: center;
+    padding: 3rem 0;
+}
+
+.ctaTitle {
+    color: #0F172A;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.ctaText {
+    color: #64748b;
+    margin-bottom: 2rem;
+}
+
+.registerButton {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: #D4AF37;
+    /* Gold */
+    color: white;
+    padding: 1rem 3rem;
+    border-radius: 4px;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 1rem;
+    letter-spacing: 0.05em;
+    transition: all 0.2s;
+    border: 2px solid #D4AF37;
+}
+
+.registerButton:hover {
+    background: transparent;
+    color: #D4AF37;
+}
+
+.payLink {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1.5rem;
+    background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+    /* Vibrant Green Gradient */
+    color: white;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-decoration: none;
+    border-radius: 9999px;
+    /* Pill shape */
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: none;
+    box-shadow: 0 4px 6px -1px rgba(22, 163, 74, 0.3), 0 2px 4px -1px rgba(22, 163, 74, 0.1);
+}
+
+.payLink:hover {
+    background: linear-gradient(135deg, #4ade80 0%, #22c55e 100%);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(22, 163, 74, 0.4), 0 4px 6px -2px rgba(22, 163, 74, 0.2);
+}
+
+.payLink:active {
+    transform: translateY(0);
+}
+
+/* Info Sections (Bank, Policy, Guidelines) */
+.infoSection {
+    background: transparent;
+    margin-bottom: 4rem;
+}
+
+.infoGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+}
+
+.infoCard {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.025);
+    border: 1px solid #e2e8f0;
+    padding: 2.5rem;
+    transition: transform 0.2s, box-shadow 0.2s;
+    height: 100%;
+}
+
+.infoCard:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.infoSectionTitle {
+    color: #0F172A;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid #f1f5f9;
+}
+
+.infoIcon {
+    color: #D4AF37;
+    /* Gold */
+}
+
+.bankDetailsList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.bankDetailsList li {
+    margin-bottom: 1rem;
+    font-size: 1.05rem;
+    color: #475569;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px dashed #e2e8f0;
+    padding-bottom: 0.5rem;
+}
+
+.bankDetailsList li:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.bankDetailsList strong {
+    color: #0F172A;
+    font-weight: 600;
+}
+
+.bankDetailsList span {
+    font-weight: 500;
+}
+
+.infoText {
+    color: #475569;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+    font-size: 1.05rem;
+}
+
+.noteBox {
+    background: #fffbeb;
+    /* Light amber/gold background */
+    border-left: 4px solid #D4AF37;
+    padding: 1rem;
+    border-radius: 0 8px 8px 0;
+    color: #92400e;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.noteBox strong {
+    color: #b45309;
+    font-weight: 600;
+}
+
+.guidelinesList {
+    padding-left: 0;
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.guidelinesList li {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e2e8f0;
+    color: #475569;
+    line-height: 1.6;
+    font-size: 1.05rem;
+    position: relative;
+    padding-left: 3rem;
+    transition: transform 0.2s;
+}
+
+.guidelinesList li:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+}
+
+.guidelinesList li::before {
+    content: "✓";
+    position: absolute;
+    left: 1.25rem;
+    top: 1.5rem;
+    color: #D4AF37;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.guidelinesList strong {
+    color: #0F172A;
+    font-weight: 600;
+}
+
+.emailLink {
+    color: #C5192D;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s;
+}
+
+.emailLink:hover {
+    text-decoration: underline;
+    color: #991b1b;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .container {
+        padding-top: 6rem;
+    }
+
+    .title {
+        font-size: 2.25rem;
+    }
+
+    .subtitle {
+        font-size: 1rem;
+    }
+
+    .datesSection,
+    .infoCard,
+    .tableHeader {
+        padding: 1.5rem;
+    }
+
+    .datesTitle,
+    .tableTitle,
+    .infoSectionTitle {
+        font-size: 1.25rem;
+    }
+
+    .datesGrid,
+    .infoGrid {
+        gap: 1.5rem;
+        grid-template-columns: 1fr;
+    }
+
+    .feeTable {
+        min-width: 100%;
+        display: block;
+    }
+
+    .feeTable thead {
+        display: none;
+    }
+
+    .feeTable tbody {
+        display: block;
+        width: 100%;
+    }
+
+    .feeTable tr {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 1.5rem;
+        border: 1px solid #e2e8f0;
+        border-radius: 8px;
+        background: white;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    }
+
+    .feeTable tr:last-child {
+        margin-bottom: 0;
+    }
+
+    .feeTable td {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 1.25rem;
+        border-bottom: 1px solid #f1f5f9;
+        font-size: 0.95rem;
+    }
+
+    .feeTable td:last-child {
+        border-bottom: none;
+        background: #f8fafc;
+        border-radius: 0 0 8px 8px;
+        justify-content: center;
+    }
+
+    .feeTable td::before {
+        content: attr(data-label);
+        font-weight: 700;
+        color: #64748b;
+        font-size: 0.85rem;
+        text-transform: uppercase;
+        margin-right: 1rem;
+    }
+
+    .categoryCell {
+        text-align: right;
+    }
+
+    .actionCell::before {
+        display: none;
+    }
+
+    .payLink {
+        width: 100%;
+        justify-content: center;
+        padding: 0.75rem 1.5rem;
+    }
+
+    .bankDetailsList li {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.25rem;
+    }
+
+    .guidelinesList {
+        grid-template-columns: 1fr;
+    }
+
+    .guidelinesList li {
+        padding: 1.25rem;
+        padding-left: 2.5rem;
+    }
+
+    .guidelinesList li::before {
+        left: 1rem;
+        top: 1.25rem;
+    }
+
+    .ctaSection {
+        padding: 2rem 0;
+    }
+
+    .ctaTitle {
+        font-size: 1.5rem;
+    }
+
+    .infoSection {
+        padding: 1.5rem;
+    }
+}

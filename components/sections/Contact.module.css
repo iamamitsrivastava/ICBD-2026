@@ -1,0 +1,211 @@
+.contactSection {
+    padding: 6rem 0;
+    /* Deep Blue Gradient Background */
+    background: linear-gradient(135deg, #0F172A 0%, #1e293b 100%);
+    color: white;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    width: 100%;
+}
+
+.heading {
+    text-align: center;
+    font-family: var(--font-heading);
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.02em;
+}
+
+.underline {
+    width: 6rem;
+    height: 4px;
+    background: linear-gradient(90deg, #D4AF37, #f59e0b);
+    margin: 0 auto 4rem;
+    border-radius: 2px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+}
+
+/* Info Column Styles */
+.infoColumn {
+    padding-top: 1rem;
+}
+
+.subHeading {
+    font-family: var(--font-heading);
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #D4AF37;
+    /* Academic Gold */
+    margin-bottom: 2rem;
+    border-left: 4px solid #D4AF37;
+    padding-left: 1rem;
+}
+
+.infoBlock {
+    margin-bottom: 3rem;
+}
+
+.contactItem {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.contactItem:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(212, 175, 55, 0.3);
+}
+
+.contactItem h4 {
+    font-family: var(--font-body);
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #e2e8f0;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.contactItem p {
+    font-size: 1.1rem;
+    color: #94a3b8;
+    margin: 0;
+}
+
+.contactItem .emailLink {
+    color: #94a3b8;
+    text-decoration: none;
+    transition: color 0.2s;
+    font-size: 1.1rem;
+}
+
+.contactItem .emailLink:hover {
+    color: #D4AF37;
+}
+
+/* Form Column Styles */
+.formColumn {
+    /* Glassmorphism */
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    padding: 3rem;
+    border-radius: 24px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.formGroup {
+    width: 100%;
+}
+
+.input,
+.textarea {
+    width: 100%;
+    padding: 1.25rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    font-size: 1rem;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    font-family: var(--font-body);
+}
+
+.input::placeholder,
+.textarea::placeholder {
+    color: #64748b;
+}
+
+.input:focus,
+.textarea:focus {
+    outline: none;
+    border-color: #D4AF37;
+    background-color: rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.1);
+}
+
+.textarea {
+    resize: vertical;
+    min-height: 150px;
+}
+
+.submitBtn {
+    align-self: flex-start;
+    background: linear-gradient(135deg, #D4AF37 0%, #b49320 100%);
+    color: white;
+    padding: 1rem 3rem;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    box-shadow: 0 10px 20px rgba(212, 175, 55, 0.2);
+}
+
+.submitBtn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 30px rgba(212, 175, 55, 0.3);
+    background: linear-gradient(135deg, #e5bd3c 0%, #c4a125 100%);
+}
+
+@media (max-width: 992px) {
+    .grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .heading {
+        font-size: 2.5rem;
+    }
+
+    .formColumn {
+        padding: 2rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .contactSection {
+        padding: 4rem 0;
+    }
+
+    .heading {
+        font-size: 2rem;
+    }
+
+    .formColumn {
+        padding: 1.5rem;
+    }
+
+    .submitBtn {
+        width: 100%;
+        text-align: center;
+    }
+}

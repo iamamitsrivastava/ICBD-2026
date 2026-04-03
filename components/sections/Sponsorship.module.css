@@ -1,0 +1,210 @@
+.sponsorship {
+    padding: 100px 0;
+    background: #000814;
+    color: #fff;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.title {
+    font-family: var(--font-heading);
+    font-size: 3.5rem;
+    background: linear-gradient(to right, #FFD700, #FFA500);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 1.5rem;
+}
+
+.subtitle {
+    font-size: 1.25rem;
+    color: #94a3b8;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    margin-bottom: 4rem;
+}
+
+.card {
+    background: rgba(30, 41, 59, 0.4);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 215, 0, 0.1);
+    border-radius: 20px;
+    padding: 2.5rem;
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    border-color: rgba(255, 215, 0, 0.3);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.sectionTitle {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    color: #FFD700;
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.benefitList {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.benefitItem {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    color: #e2e8f0;
+}
+
+.checkIcon {
+    color: #10b981;
+    margin-top: 0.25rem;
+}
+
+.tableWrapper {
+    overflow-x: auto;
+    margin-top: 2rem;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 215, 0, 0.1);
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    background: rgba(15, 23, 42, 0.6);
+}
+
+.table th,
+.table td {
+    padding: 1.25rem;
+    text-align: left;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.table th {
+    background: rgba(255, 215, 0, 0.05);
+    color: #FFD700;
+    font-family: var(--font-heading);
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 0.05em;
+}
+
+.table td {
+    color: #e2e8f0;
+    font-size: 0.95rem;
+}
+
+.featureName {
+    font-weight: 500;
+    color: #fff;
+}
+
+.check {
+    color: #10b981;
+    font-weight: bold;
+}
+
+.dash {
+    color: #64748b;
+}
+
+.amount {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #fff;
+}
+
+.bankGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.bankItem {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.bankLabel {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #94a3b8;
+}
+
+.bankValue {
+    font-size: 1.1rem;
+    color: #fff;
+    font-weight: 500;
+}
+
+.contactBox {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    background: linear-gradient(135deg, rgba(30, 41, 59, 0.8) 0%, rgba(15, 23, 42, 0.8) 100%);
+    padding: 2.5rem;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 215, 0, 0.2);
+}
+
+.contactInfo h3 {
+    color: #FFD700;
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+}
+
+.contactInfo p {
+    color: #94a3b8;
+    margin-bottom: 0.25rem;
+}
+
+.phone {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #fff !important;
+    text-decoration: none;
+    margin-top: 1rem;
+    font-weight: 600;
+}
+
+@media (max-width: 768px) {
+    .title {
+        font-size: 2.5rem;
+    }
+
+    .sectionTitle {
+        font-size: 1.75rem;
+    }
+
+    .contactBox {
+        flex-direction: column;
+        text-align: center;
+    }
+}

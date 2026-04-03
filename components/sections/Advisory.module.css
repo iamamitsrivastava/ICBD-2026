@@ -1,0 +1,39 @@
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    text-align: center;
+    justify-content: center;
+}
+
+.card {
+    width: 100%;
+    max-width: 144px;
+    height: 144px;
+    margin: 0 auto;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid #FACC15;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+}
+
+.advisoryCard {
+    transition: all 0.3s ease;
+}
+
+.advisoryCard:hover {
+    transform: translateY(-5px);
+    border-color: #FACC15 !important;
+    background-color: rgba(30, 41, 59, 0.6) !important;
+}
+
+.opCard {
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.opCard:hover {
+    transform: translateY(-12px);
+    border: 1px solid rgba(250, 204, 21, 0.4) !important;
+    box-shadow: 0 20px 40px rgba(250, 204, 21, 0.15);
+    background-color: rgba(30, 41, 59, 0.6) !important;
+}

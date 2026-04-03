@@ -1,0 +1,183 @@
+.main {
+    background-color: #0F172A;
+    /* Deep Blue Primary */
+    min-height: 100vh;
+    padding-top: 100px;
+    /* Header height + spacing */
+    font-family: var(--font-body);
+    color: #cbd5e1;
+    /* Slate 300 */
+    background-image: radial-gradient(circle at 50% 0%, #1e293b 0%, #0F172A 70%);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.title {
+    font-family: var(--font-heading);
+    color: white;
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.subtitle {
+    color: #94a3b8;
+    /* Slate 400 */
+    font-size: 1.1rem;
+    margin-bottom: 2.5rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.downloadBtn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: #D4AF37;
+    /* Academic Gold */
+    color: #0F172A;
+    /* Dark Text for contrast */
+    padding: 0.875rem 2rem;
+    border-radius: 9999px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(212, 175, 55, 0.2);
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 0.05em;
+}
+
+.downloadBtn:hover {
+    background-color: #FACC15;
+    /* Lighter Gold */
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(212, 175, 55, 0.4);
+}
+
+.section {
+    background: rgba(30, 41, 59, 0.6);
+    /* Glassmorphism dark */
+    backdrop-filter: blur(12px);
+    border-radius: 16px;
+    padding: 2.5rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.section:hover {
+    border-color: rgba(212, 175, 55, 0.3);
+    /* Gold tint on hover */
+    /* transform: translateY(-2px); */
+    /* Optional subtle lift */
+}
+
+.sectionHeader {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    padding-bottom: 1rem;
+}
+
+.icon {
+    color: #D4AF37;
+    /* Gold */
+    width: 28px;
+    height: 28px;
+}
+
+.sectionTitle {
+    color: white;
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-family: var(--font-heading);
+}
+
+.content {
+    line-height: 1.8;
+    color: #cbd5e1;
+    /* Slate 300 */
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+@media (min-width: 768px) {
+    .grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.darkSection {
+    background: linear-gradient(145deg, rgba(20, 18, 10, 0.6) 0%, rgba(30, 41, 59, 0.8) 100%);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    /* Gold border */
+}
+
+.darkSection .sectionTitle {
+    color: #D4AF37;
+}
+
+.darkSection .content {
+    color: #e2e8f0;
+}
+
+.referenceBox {
+    background-color: rgba(15, 23, 42, 0.5);
+    padding: 1.25rem;
+    border-radius: 8px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.9rem;
+    color: #94a3b8;
+    margin-top: 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.list {
+    padding-left: 1.5rem;
+    margin: 0;
+}
+
+.listItem {
+    margin-bottom: 0.75rem;
+}
+
+.sectionWrapper {
+    background-color: rgba(30, 41, 59, 0.4) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-top: 1rem;
+}
+
+.link {
+    color: #D4AF37;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.link:hover {
+    color: #FACC15;
+    text-decoration: underline;
+}

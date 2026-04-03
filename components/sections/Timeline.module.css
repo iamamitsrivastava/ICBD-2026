@@ -1,0 +1,227 @@
+.timelineSection {
+    background: #000;
+    /* Deep Black */
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.9)),
+        url('/images/vadodara-night-hq.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: white;
+    position: relative;
+    overflow: hidden;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.9);
+}
+
+/* Optional animated overlay */
+.timelineSection::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, transparent 0%, rgba(0, 0, 0, 0.8) 100%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.timeline {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    margin-top: 4rem;
+    z-index: 1;
+}
+
+/* Horizontal Line Base */
+.timeline::after {
+    content: '';
+    position: absolute;
+    top: 24px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: rgba(255, 255, 255, 0.1);
+    z-index: -1;
+}
+
+/* Moving animated line */
+.timelineLineAnimated {
+    position: absolute;
+    top: 24px;
+    left: 0;
+    width: 20%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--color-secondary), transparent);
+    z-index: 0;
+    animation: timeline-travel 3s ease-in-out infinite;
+    opacity: 0.8;
+}
+
+/* We need to apply this class or pseudo-element structure in TSX if not present,
+   but let's repurpose the existing ::after or add a new child if needed. 
+   Wait, the previous CSS used ::after for the animation. Let's stick to that but refine it.
+*/
+
+/* Re-doing the pseudo-elements for clarity and effect */
+.timeline::before {
+    /* The static line */
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: rgba(255, 255, 255, 0.15);
+    z-index: 0;
+}
+
+.timeline::after {
+    /* The moving glow */
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: 0;
+    height: 2px;
+    width: 15%;
+    background: linear-gradient(90deg, transparent, var(--color-secondary), #fff, var(--color-secondary), transparent);
+    z-index: 1;
+    animation: timeline-travel 4s ease-in-out infinite;
+    filter: drop-shadow(0 0 5px var(--color-secondary));
+}
+
+.item {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    flex: 1;
+    padding: 0 1rem;
+    transition: transform 0.3s ease;
+}
+
+.item:hover {
+    transform: translateY(-5px);
+}
+
+.dot {
+    width: 48px;
+    height: 48px;
+    background-color: #0f172a;
+    /* Dark background for dot */
+    border-radius: 50%;
+    margin: 0 auto 1.5rem;
+    border: 2px solid var(--color-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: white;
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.item:hover .dot {
+    background-color: var(--color-secondary);
+    color: var(--color-primary);
+    box-shadow: 0 0 25px rgba(255, 215, 0, 0.6);
+    transform: scale(1.1);
+}
+
+/* Icon color inside dot handled by Lucide props, or we can override here if needed */
+
+.date {
+    display: block;
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    font-family: var(--font-heading);
+    color: var(--color-secondary);
+    /* Gold/Yellow for dates */
+}
+
+.label {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+@keyframes timeline-travel {
+    0% {
+        left: 0;
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    90% {
+        opacity: 1;
+    }
+
+    100% {
+        left: 100%;
+        opacity: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .timeline {
+        flex-direction: column;
+        gap: 3rem;
+        padding-left: 1rem;
+    }
+
+    .timeline::before {
+        top: 0;
+        left: 23px;
+        /* Center of dot (48px wide -> center 24px) */
+        width: 2px;
+        height: 100%;
+    }
+
+    .timeline::after {
+        top: 0;
+        left: 23px;
+        width: 2px;
+        height: 20%;
+        background: linear-gradient(180deg, transparent, var(--color-secondary), #fff, var(--color-secondary), transparent);
+        animation: timeline-travel-vertical 4s ease-in-out infinite;
+    }
+
+    @keyframes timeline-travel-vertical {
+        0% {
+            top: 0;
+            opacity: 0;
+        }
+
+        10% {
+            opacity: 1;
+        }
+
+        90% {
+            opacity: 1;
+        }
+
+        100% {
+            top: 100%;
+            opacity: 0;
+        }
+    }
+
+    .item {
+        text-align: left;
+        padding-left: 5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .dot {
+        position: absolute;
+        left: 0;
+        top: 0;
+        margin: 0;
+    }
+}
