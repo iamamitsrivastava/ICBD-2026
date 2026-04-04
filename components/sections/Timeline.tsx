@@ -1,4 +1,4 @@
-import { CalendarClock, Send, CheckCircle } from 'lucide-react';
+import { CalendarClock, Send, CheckCircle, FileText } from 'lucide-react';
 import { conference } from '@/data/conference';
 import styles from './Timeline.module.css';
 import ScrollReveal from '@/components/ui/ScrollReveal';
@@ -6,9 +6,10 @@ import { TimelineItem } from '@/types';
 
 export default function Timeline() {
     const icons = [
-        <CheckCircle key="1" size={24} />, // Registration
-        <Send key="2" size={24} />,        // Submission
-        <CalendarClock key="3" size={24} />, // Conference
+        <Send key="1" size={24} />,        // Abstract Submission
+        <FileText key="2" size={24} />,    // Full Paper Submission
+        <CheckCircle key="3" size={24} />, // Registration
+        <CalendarClock key="4" size={24} />, // Conference
     ];
 
     return (

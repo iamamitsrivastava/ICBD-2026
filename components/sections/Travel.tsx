@@ -1,6 +1,7 @@
 'use client';
 import { useState } from 'react';
 import { MapPin, Plane, Train, Car, Hotel, Camera, Info } from 'lucide-react';
+import TouristSlider from './TouristSlider';
 import styles from './Travel.module.css';
 
 export default function Travel() {
@@ -86,6 +87,10 @@ export default function Travel() {
                         </h2>
                         <ul className={styles.accommodationList}>
                             <li className={styles.accommodationItem}>
+                                <span className={styles.hotelName}>University Guest House</span>
+                                <span className={styles.hotelDistance}>On Campus</span>
+                            </li>
+                            <li className={styles.accommodationItem}>
                                 <span className={styles.hotelName}>Vadpadraka Hotel & Resort</span>
                                 <span className={styles.hotelDistance}>2.3 km from venue</span>
                             </li>
@@ -129,10 +134,18 @@ export default function Travel() {
                     </div>
                 </div>
 
+                <div className={styles.sliderHeader}>
+                    <h2 className={styles.sectionTitle} style={{ justifyContent: 'center' }}>
+                        <Camera size={32} /> Local Highlights
+                    </h2>
+                    <TouristSlider aspectRatio="21 / 9" maxWidth="1200px" />
+                </div>
+
                 <div className={styles.visaBox}>
                     <h2 className={styles.sectionTitle} style={{ justifyContent: 'center' }}>
                         <Info size={32} /> Visa Information
                     </h2>
+
                     <p>
                         International attendees may require a visa to enter India. We recommend applying for a conference visa well in advance.
                         Please check the official website of the Indian embassy or consulate in your country for the most up-to-date information

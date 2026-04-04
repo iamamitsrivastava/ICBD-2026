@@ -1,31 +1,125 @@
 'use client';
+import React, { useState, useEffect } from 'react';
 import Header from '@/components/sections/Header';
 import Footer from "../../components/sections/Footer";
-import { CreditCard, Landmark, FileText, AlertCircle } from 'lucide-react';
+import { Landmark, FileText, AlertCircle, Download, Lock } from 'lucide-react';
 import styles from './page.module.css';
 
 export default function RegistrationPage() {
+    // UNLOCK DATE: 15th July 2026 (Registration deadline is July 10, so On-Spot starts after)
+    const unlockTarget = new Date('2026-07-15T00:00:00').getTime();
+    const [currentTime, setCurrentTime] = useState(new Date().getTime());
+    
+    // On-Spot is locked BEFORE July 15
+    const isOnSpotLocked = currentTime < unlockTarget;
+    // Other categories are locked AFTER July 15
+    const areOthersLocked = !isOnSpotLocked;
+
+    useEffect(() => {
+        const timer = setInterval(() => {
+            setCurrentTime(new Date().getTime());
+        }, 1000);
+        return () => clearInterval(timer);
+    }, []);
+
+    const formatCountdown = () => {
+        const diff = unlockTarget - currentTime;
+        if (diff <= 0) return null;
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+        
+        if (days > 0) return `${days}d ${hours}h`;
+        return `${minutes}m ${seconds}s`;
+    };
+
     const keyDates = [
-        { label: 'Registration Deadline', value: '25th May, 2026' },
-        { label: 'Last Date for Submission', value: '30th May, 2026' },
-        { label: 'Conference Date', value: '5th - 6th June, 2026' },
+        { label: 'Abstract Submission Deadline', value: '30th June, 2026' },
+        { label: 'Full Paper Submission Deadline', value: '5th July, 2026' },
+        { label: 'Registration Deadline', value: '10th July, 2026' },
+        { label: 'Conference Date', value: '16th - 17th July 2026' },
+    ];
+    
+    const fees = [
+        {
+            category: 'Research Scholar(Ph.D[Student outside Parul University])',
+            offlineAttending: '1000 INR',
+            onlineAttending: '800 INR',
+            regularContributor: '1200 INR',
+            onlineContributor: '1000 INR',
+            onSpotContributor: '1500 INR',
+        },
+        {
+            category: 'UG/PG (within Parul University)',
+            offlineAttending: '700 INR',
+            onlineAttending: '500 INR',
+            regularContributor: '800 INR',
+            onlineContributor: '600 INR',
+            onSpotContributor: '1000 INR',
+        },
+        {
+            category: 'Academicians',
+            offlineAttending: '1200 INR',
+            onlineAttending: '1000 INR',
+            regularContributor: '1500 INR',
+            onlineContributor: '1200 INR',
+            onSpotContributor: '2000 INR',
+        },
+        {
+            category: 'Industry',
+            offlineAttending: '1500 INR',
+            onlineAttending: '1200 INR',
+            regularContributor: '2000 INR',
+            onlineContributor: '1700 INR',
+            onSpotContributor: '2500 INR',
+        },
+        {
+            category: 'Foreign Student',
+            offlineAttending: '50 USD',
+            onlineAttending: '30 USD',
+            regularContributor: '75 USD',
+            onlineContributor: '50 USD',
+            onSpotContributor: '100 USD',
+        },
+        {
+            category: 'Foreign Delegate',
+            offlineAttending: '100 USD',
+            onlineAttending: '50 USD',
+            regularContributor: '125 USD',
+            onlineContributor: '75 USD',
+            onSpotContributor: '150 USD',
+        },
     ];
 
-    const fees = [
-        { category: 'Students (within Parul University)', fee: '750', link: '#' },
-        { category: 'Faculty (within Parul University)', fee: '900', link: '#' },
-        { category: 'Students (Outside)', fee: '900', link: '#' },
-        { category: 'Academician/Faculty (Outside)', fee: '1200', link: '#' },
-        { category: 'Industry/NGO (Outside)', fee: '1500', link: '#' },
-        { category: 'International Delegates', fee: '25$', link: '#' },
-    ];
+    const renderCategory = (name: string) => {
+        const mainText = name.split(/[(\[]/)[0].trim();
+        const subParts = name.slice(mainText.length).trim();
+
+        if (!subParts) return <span style={{ fontWeight: 800, fontSize: '1.05rem' }}>{name}</span>;
+
+        return (
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.15rem', padding: '0.5rem 0' }}>
+                <span style={{ fontWeight: 800, fontSize: '1.1rem', letterSpacing: '0.01em', lineHeight: '1.2' }}>
+                    {mainText}
+                </span>
+                <span style={{
+                    fontSize: '0.8rem',
+                    color: 'white',
+                    fontWeight: 700,
+                    opacity: 0.8
+                }}>
+                    {subParts}
+                </span>
+            </div>
+        );
+    };
 
     return (
         <main className="min-h-screen bg-slate-50 text-slate-900">
             <Header variant="solid" />
 
             <div className={styles.container}>
-                {/* Title Section */}
                 <div className={styles.titleSection}>
                     <h1 className={styles.title}>Registration</h1>
                     <p className={styles.subtitle}>
@@ -33,7 +127,6 @@ export default function RegistrationPage() {
                     </p>
                 </div>
 
-                {/* Key Dates Section */}
                 <div className={styles.datesSection}>
                     <div style={{ textAlign: 'center' }}>
                         <h2 className={styles.datesTitle}>Key Dates</h2>
@@ -48,30 +141,117 @@ export default function RegistrationPage() {
                     </div>
                 </div>
 
-                {/* Fees Table Section */}
                 <div className={styles.tableContainer}>
                     <div className={styles.tableHeader}>
-                        <h2 className={styles.tableTitle}>Registration Fees</h2>
-                        <p style={{ marginTop: '0.5rem', opacity: 0.9, fontSize: '0.9rem' }}>Bank Details for Payment</p>
+                        <h2 className={styles.tableTitle}>Registration Fee Structure</h2>
+                        <div style={{ display: 'flex', justifyContent: 'center' }}>
+                            <div className={styles.instructionBanner}>
+                                <AlertCircle size={20} className={styles.instructionIcon} />
+                                <span>Please click on the respective fee amount below to proceed to the payment portal.</span>
+                            </div>
+                        </div>
                     </div>
 
                     <div className={styles.tableWrapper}>
                         <table className={styles.feeTable}>
                             <thead>
                                 <tr>
-                                    <th>Category</th>
-                                    <th>Fee (Rs.)</th>
-                                    <th>Action</th>
+                                    <th rowSpan={2} className={styles.categoryHeader}>Category</th>
+                                    <th colSpan={2} className={`${styles.groupHeader} ${styles.groupHeaderAttending}`}>Only Attending</th>
+                                    <th colSpan={3} className={styles.groupHeader}>Contributor (Presenting Paper)</th>
+                                </tr>
+                                <tr>
+                                    <th className={`${styles.subHeader} ${styles.attendingCol}`}>Offline</th>
+                                    <th className={`${styles.subHeader} ${styles.attendingCol}`}>Online</th>
+                                    <th className={`${styles.subHeader} ${styles.contributorCol}`}>Offline</th>
+                                    <th className={`${styles.subHeader} ${styles.contributorCol}`}>Online</th>
+                                    <th className={`${styles.subHeader} ${styles.contributorCol}`}>
+                                        <div style={{ 
+                                            display: 'flex', 
+                                            flexDirection: 'column', 
+                                            alignItems: 'center', 
+                                            justifyContent: 'center', 
+                                            gap: '0.1rem',
+                                            backgroundColor: 'rgba(231, 173, 27, 0.1)',
+                                            padding: '0.4rem',
+                                            borderRadius: '6px',
+                                            border: '1px solid rgba(218, 165, 32, 0.3)'
+                                        }}>
+                                            <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', color: '#daa520', fontWeight: 'bold' }}>
+                                                On Spot {isOnSpotLocked && <Lock size={14} />}
+                                            </div>
+                                            {isOnSpotLocked && (
+                                                <span style={{ fontSize: '0.65rem', fontWeight: 600, color: '#FFD700', textTransform: 'uppercase' }}>
+                                                    {formatCountdown()} left
+                                                </span>
+                                            )}
+                                        </div>
+                                    </th>
                                 </tr>
                             </thead>
                             <tbody>
                                 {fees.map((item, index) => (
                                     <tr key={index}>
-                                        <td className={styles.categoryCell} data-label="Category">{item.category}</td>
-                                        <td className={styles.feeCell} data-label="Fee (Rs.)">{item.fee}</td>
-                                        <td data-label="Action" className={styles.actionCell}>
-                                            <a href={item.link} className={styles.payLink} target="_blank" rel="noopener noreferrer">
-                                                <CreditCard size={16} /> Pay Now
+                                        <td className={`${styles.categoryCell} ${styles.categoryHeader}`} data-label="Category">
+                                            <div className={styles.categoryName} style={{ color: 'white' }}>
+                                                {renderCategory(item.category)}
+                                            </div>
+                                        </td>
+                                        <td data-label="Offline (Attending)" className={styles.attendingCol}>
+                                            <a 
+                                                href="#" 
+                                                className={`${styles.feeGridButton} ${areOthersLocked ? styles.lockedButton : ''}`}
+                                                onClick={(e) => areOthersLocked && e.preventDefault()}
+                                                style={areOthersLocked ? { cursor: 'not-allowed', color: 'grey', opacity: 0.4 } : {}}
+                                            >
+                                                <span className={styles.feeText}>{item.offlineAttending}</span>
+                                                {areOthersLocked && <Lock size={14} style={{ marginLeft: '4px' }} />}
+                                            </a>
+                                        </td>
+                                        <td data-label="Online (Attending)" className={`${styles.attendingCol} ${styles.onlineCol}`}>
+                                            <a 
+                                                href="#" 
+                                                className={`${styles.feeGridButton} ${areOthersLocked ? styles.lockedButton : ''}`}
+                                                onClick={(e) => areOthersLocked && e.preventDefault()}
+                                                style={areOthersLocked ? { cursor: 'not-allowed', color: 'grey', opacity: 0.4 } : {}}
+                                            >
+                                                <span className={styles.feeText}>{item.onlineAttending}</span>
+                                                {areOthersLocked && <Lock size={14} style={{ marginLeft: '4px' }} />}
+                                            </a>
+                                        </td>
+                                        <td data-label="Regular (Contributor)" className={styles.contributorCol}>
+                                            <a 
+                                                href="#" 
+                                                className={`${styles.feeGridButton} ${areOthersLocked ? styles.lockedButton : ''}`}
+                                                onClick={(e) => areOthersLocked && e.preventDefault()}
+                                                style={areOthersLocked ? { cursor: 'not-allowed', color: 'grey', opacity: 0.4 } : {}}
+                                            >
+                                                <span className={styles.feeText}>{item.regularContributor}</span>
+                                                {areOthersLocked && <Lock size={14} style={{ marginLeft: '4px' }} />}
+                                            </a>
+                                        </td>
+                                        <td data-label="Online (Contributor)" className={`${styles.contributorCol} ${styles.onlineCol}`}>
+                                            <a 
+                                                href="#" 
+                                                className={`${styles.feeGridButton} ${areOthersLocked ? styles.lockedButton : ''}`}
+                                                onClick={(e) => areOthersLocked && e.preventDefault()}
+                                                style={areOthersLocked ? { cursor: 'not-allowed', color: 'grey', opacity: 0.4 } : {}}
+                                            >
+                                                <span className={styles.feeText}>{item.onlineContributor}</span>
+                                                {areOthersLocked && <Lock size={14} style={{ marginLeft: '4px' }} />}
+                                            </a>
+                                        </td>
+                                        <td data-label="On Spot (Contributor)" className={styles.contributorCol}>
+                                            <a 
+                                                href="#" 
+                                                className={`${styles.feeGridButton} ${isOnSpotLocked ? styles.lockedButton : ''}`}
+                                                onClick={(e) => isOnSpotLocked && e.preventDefault()}
+                                                style={isOnSpotLocked ? { cursor: 'not-allowed', color: 'grey', opacity: 0.4 } : {}}
+                                            >
+                                                <span className={styles.feeText} style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
+                                                    {item.onSpotContributor}
+                                                    {isOnSpotLocked && <Lock size={14} />}
+                                                </span>
                                             </a>
                                         </td>
                                     </tr>
@@ -81,7 +261,6 @@ export default function RegistrationPage() {
                     </div>
                 </div>
 
-                {/* Information Sections */}
                 <div className={styles.infoSection}>
                     <div className={styles.infoGrid}>
                         <div className={styles.infoCard}>
@@ -90,11 +269,11 @@ export default function RegistrationPage() {
                                 Bank Details
                             </h3>
                             <ul className={styles.bankDetailsList}>
-                                <li><strong>Account Name:</strong> <span>R&amp;D Unit of Parul University</span></li>
-                                <li><strong>Bank Name:</strong> <span>Central Bank of India</span></li>
-                                <li><strong>Branch:</strong> <span>PIET, Limbda</span></li>
-                                <li><strong>Account Number:</strong> <span>3793150745</span></li>
-                                <li><strong>IFSC Code:</strong> <span>CBIN0284063</span></li>
+                                <li><strong>Account Name:</strong> <span></span></li>
+                                <li><strong>Bank Name:</strong> <span></span></li>
+                                <li><strong>Branch:</strong> <span></span></li>
+                                <li><strong>Account Number:</strong> <span></span></li>
+                                <li><strong>IFSC Code:</strong> <span></span></li>
                             </ul>
                         </div>
                         <div className={styles.infoCard}>
@@ -103,37 +282,52 @@ export default function RegistrationPage() {
                                 Refund Policy
                             </h3>
                             <p className={styles.infoText}>
-                                Refunds will be issued only for cancellations requests submitted at least one week prior to the early-bird registration deadline. No refund will be process after that.
+                                Refunds will be issued only for cancellation requests submitted at least one week prior to the early-bird registration deadline. No refunds will be processed after this period.
                             </p>
                             <div className={styles.noteBox}>
-                                <strong>Note:</strong> The amount mentioned above covers only the registration fee. If your paper is selected for publication, additional fees apply for accepted papers.
+                                <strong>Note:</strong>  Note: The above amount covers only the registration fee. Additional charges will apply for papers accepted for the publication as per receptive guidelines.
                             </div>
                         </div>
                     </div>
                 </div>
-
                 <div className={styles.infoSection}>
                     <h3 className={styles.infoSectionTitle}>
                         <FileText className={styles.infoIcon} size={24} />
                         Submission Guidelines
                     </h3>
                     <ul className={styles.guidelinesList}>
-                        <li>Abstracts should not exceed <strong>300 words</strong> and full papers should be a maximum <strong>4500 words</strong> formatted in APA / MLA.</li>
-                        <li>Up to <strong>three authors</strong> are allowed per paper.</li>
-                        <li>Papers must be submitted in Word format to <a href="mailto:NCBD25@gmail.com" className={styles.emailLink}>NCBD25@gmail.com</a></li>
-                        <li>A <strong>copyright declaration</strong> is mandatory.</li>
+                        <li>Abstracts should be <strong>250-300 words</strong>, and full papers should be a minimum of <strong>7000 words</strong>, formatted in APA or MLA 9th Edition.</li>
+                        <li>
+                            Up to <strong>Four authors</strong> are permitted per paper.
+                            <a
+                                href="/Author_Guidelines_ICBD_2026.pdf"
+                                download
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className={styles.downloadFormLink}
+                                style={{ marginLeft: '12px' }}
+                            >
+                                <Download size={14} />
+                                Download Author Guideline
+                            </a>
+                        </li>
+                        <li>
+                            Submissions must be made in prescribed format.
+                        </li>
+                        <li>
+                            A <strong>signed copyright declaration</strong> is mandatory.
+                            <a
+                                href="/Author_Copyright_Declaration_Form.pdf"
+                                download
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className={styles.downloadFormLink}
+                            >
+                                <Download size={14} />
+                                Download Form
+                            </a>
+                        </li>
                     </ul>
-                </div>
-
-                {/* CTA Section */}
-                <div className={styles.ctaSection}>
-                    <h2 className={styles.ctaTitle}>Ready to Join Us?</h2>
-                    <p className={styles.ctaText}>
-                        Click the button below to proceed to the external registration portal.
-                    </p>
-                    <a href="/registration#register" className={styles.registerButton}>
-                        Register Now &rarr;
-                    </a>
                 </div>
             </div>
 

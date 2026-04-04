@@ -7,6 +7,26 @@ import ScrollReveal from "@/components/ui/ScrollReveal";
 import { CommitteeMember } from "@/types";
 
 export default function InternationalAdvisoryPage() {
+
+    const groupedMembers = [
+        { category: "Distinguished Leaders & Former Heads of State", members: [] as CommitteeMember[] },
+        { category: "Academic Leaders & Department Heads", members: [] as CommitteeMember[] },
+        { category: "Professors & Experts", members: [] as CommitteeMember[] }
+    ];
+
+    (conference.committees.internationalAdvisory || []).forEach(member => {
+        const r = (member.role || '').toLowerCase();
+        if (r.includes('president') || r.includes('sikyong') || r.includes('chancellor') || r.includes('director') || r.includes('founder')) {
+            groupedMembers[0].members.push(member);
+        } else if (r.includes('head') || r.includes('dean') || r.includes('leader') || r.includes('hod')) {
+            groupedMembers[1].members.push(member);
+        } else {
+            groupedMembers[2].members.push(member);
+        }
+    });
+
+    const activeGroups = groupedMembers.filter(g => g.members.length > 0);
+
     return (
         <main style={{ backgroundColor: '#0B1C35', minHeight: '100vh', color: 'white' }}>
             <Header variant="solid" />
@@ -49,13 +69,15 @@ export default function InternationalAdvisoryPage() {
 
             {/* Members Grid */}
             <section style={{ paddingBottom: '8rem', paddingLeft: '1.5rem', paddingRight: '1.5rem' }}>
-                <div style={{ maxWidth: '900px', margin: '0 auto' }}>
+                <div style={{ maxWidth: '1000px', margin: '0 auto' }}>
                     {conference.committees.internationalAdvisory && conference.committees.internationalAdvisory.length > 0 ? (
-                        <div style={{
-                            display: 'grid',
-                            gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))',
-                            gap: '2.5rem',
+                        <div style={{ 
+                            display: 'grid', 
+                            gridTemplateColumns: 'repeat(2, 1fr)',
+                            gap: '4rem 3.5rem',
                             justifyContent: 'center',
+                            maxWidth: '900px',
+                            margin: '0 auto'
                         }}>
                             {conference.committees.internationalAdvisory.map((person: CommitteeMember, idx: number) => (
                                 <ScrollReveal key={idx}>
@@ -63,14 +85,14 @@ export default function InternationalAdvisoryPage() {
                                         {/* Image Block */}
                                         <div style={{
                                             position: 'relative',
-                                            width: '100%',
-                                            aspectRatio: '3.5 / 4',
-                                            borderRadius: '1.5rem',
+                                            width: '240px',
+                                            height: '240px',
+                                            borderRadius: '50%',
                                             border: '4px solid #FACC15',
                                             overflow: 'hidden',
                                             margin: '0 auto 1.5rem auto',
                                             boxShadow: '0 8px 32px rgba(0, 0, 0, 0.25)',
-                                            transition: 'transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.4s',
+                                            transition: 'transform 0.4s ease',
                                         }}
                                             className="advisor-image-container"
                                         >
@@ -79,7 +101,10 @@ export default function InternationalAdvisoryPage() {
                                                     src={person.image}
                                                     alt={person.name}
                                                     fill
-                                                    style={{ objectFit: 'cover', objectPosition: 'top' }}
+                                                    style={{ 
+                                                        objectFit: 'cover', 
+                                                        objectPosition: 'top'
+                                                    }}
                                                 />
                                             ) : (
                                                 <div style={{ width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: '#1e293b' }}>
@@ -90,8 +115,8 @@ export default function InternationalAdvisoryPage() {
 
                                         {/* Text Block */}
                                         <h3 style={{
-                                            fontSize: '1.5rem',
-                                            fontWeight: 700,
+                                            fontSize: '1.6rem',
+                                            fontWeight: 800,
                                             color: 'white',
                                             marginBottom: '0.4rem',
                                             fontFamily: 'var(--font-heading)',
@@ -102,9 +127,9 @@ export default function InternationalAdvisoryPage() {
                                         {person.role && (
                                             <p style={{
                                                 color: '#FACC15',
-                                                fontSize: '0.95rem',
+                                                fontSize: '1.05rem',
                                                 fontWeight: 600,
-                                                marginBottom: '0.25rem',
+                                                marginBottom: '0.35rem',
                                                 lineHeight: 1.3
                                             }}>
                                                 {person.role}
@@ -113,8 +138,9 @@ export default function InternationalAdvisoryPage() {
                                         {person.affiliation && (
                                             <p style={{
                                                 color: '#94a3b8',
-                                                fontSize: '0.9rem',
+                                                fontSize: '0.95rem',
                                                 fontWeight: 500,
+                                                lineHeight: 1.5
                                             }}>
                                                 {person.affiliation}
                                             </p>
@@ -124,50 +150,9 @@ export default function InternationalAdvisoryPage() {
                             ))}
                         </div>
                     ) : (
-                        <div style={{
-                            display: 'grid',
-                            gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))',
-                            gap: '2.5rem',
-                            justifyContent: 'center',
-                        }}>
-                            {[1, 2].map((idx) => (
-                                <ScrollReveal key={idx}>
-                                    <div style={{ textAlign: 'center', opacity: 0.6 }}>
-                                        {/* Empty Image Block */}
-                                        <div style={{
-                                            position: 'relative',
-                                            width: '100%',
-                                            aspectRatio: '3.5 / 4',
-                                            borderRadius: '1.5rem',
-                                            border: '4px dashed rgba(250, 204, 21, 0.3)',
-                                            overflow: 'hidden',
-                                            margin: '0 auto 1.5rem auto',
-                                            backgroundColor: 'rgba(30, 41, 59, 0.5)',
-                                            display: 'flex',
-                                            alignItems: 'center',
-                                            justifyContent: 'center',
-                                        }}>
-                                            <span style={{ color: 'rgba(148, 163, 184, 0.5)', fontSize: '4rem' }}>👤</span>
-                                        </div>
-
-                                        {/* Empty Text Blocks */}
-                                        <div style={{
-                                            height: '24px',
-                                            width: '70%',
-                                            backgroundColor: 'rgba(255, 255, 255, 0.1)',
-                                            borderRadius: '4px',
-                                            margin: '0 auto 0.75rem auto',
-                                        }} />
-                                        <div style={{
-                                            height: '16px',
-                                            width: '45%',
-                                            backgroundColor: 'rgba(250, 204, 21, 0.15)',
-                                            borderRadius: '4px',
-                                            margin: '0 auto',
-                                        }} />
-                                    </div>
-                                </ScrollReveal>
-                            ))}
+                        <div style={{ textAlign: 'center', padding: '5rem 2rem', color: '#94a3b8' }}>
+                            <p style={{ fontSize: '1.4rem', marginBottom: '0.75rem' }}>🌍</p>
+                            <p>International Advisory Committee members will be announced soon.</p>
                         </div>
                     )}
                 </div>

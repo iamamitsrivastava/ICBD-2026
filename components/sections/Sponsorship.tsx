@@ -6,10 +6,10 @@ export default function Sponsorship() {
     const packages = [
         {
             feature: "Amount",
-            platinum: "₹50,000",
-            gold: "₹40,000",
-            silver: "₹25,000",
-            inkind: "₹15,000 (or equivalent)"
+            platinum: "₹25,000",
+            gold: "₹20,000",
+            silver: "₹15,000",
+            inkind: "₹10,000 (or equivalent)"
         },
         {
             feature: "Logo on the conference website",
@@ -23,7 +23,7 @@ export default function Sponsorship() {
             platinum: true,
             gold: true,
             silver: true,
-            inkind: false
+            inkind: true
         },
         {
             feature: "Logo on conference publications (souvenir/proceedings)",
@@ -36,14 +36,14 @@ export default function Sponsorship() {
             feature: "Display Table / Booth",
             platinum: true,
             gold: true,
-            silver: true,
+            silver: false,
             inkind: false
         },
         {
             feature: "Display of company pull-up banners at selected areas",
             platinum: true,
-            gold: true,
-            silver: true,
+            gold: false,
+            silver: false,
             inkind: false
         },
         {
@@ -64,12 +64,12 @@ export default function Sponsorship() {
             feature: "Networking lunch with ICBD executive team & Invited stakeholders",
             platinum: true,
             gold: true,
-            silver: false,
-            inkind: false
+            silver: true,
+            inkind: true
         },
         {
             feature: "Accommodation at/near conference venue",
-            platinum: "2 Persons",
+            platinum: "3 Persons",
             gold: "1 Person",
             silver: false,
             inkind: false
@@ -184,20 +184,39 @@ export default function Sponsorship() {
                         <h2 className={styles.sectionTitle}>
                             <Briefcase className={styles.goldIcon} /> Contact Details
                         </h2>
-                        <div className={styles.contactBox}>
-                            <div className={styles.contactAvatar}>
-                                <div style={{ width: '80px', height: '80px', borderRadius: '50%', background: 'rgba(255,215,0,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', border: '2px solid #FFD700' }}>
-                                    <User size={40} color="#FFD700" />
+                        <div className={styles.contactGrid}>
+                            {[
+                                {
+                                    name: "Dr. Vijendra Nath Pathak",
+                                    role: "Associate Professor",
+                                    phone: "+91 79057 65113"
+                                },
+                                {
+                                    name: "Dr. Ashok Biswas",
+                                    role: "Co-Convener",
+                                    phone: "+91 83068 49669"
+                                },
+                                {
+                                    name: "Mr. Ashish Kotadiya",
+                                    role: "Co-Convener",
+                                    phone: "+91 81558 83094"
+                                }
+                            ].map((contact, index) => (
+                                <div key={index} className={styles.contactBox}>
+                                    <div className={styles.contactAvatar}>
+                                        <div style={{ width: '80px', height: '80px', borderRadius: '50%', background: 'rgba(255,215,0,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', border: '2px solid #FFD700' }}>
+                                            <User size={40} color="#FFD700" />
+                                        </div>
+                                    </div>
+                                    <div className={styles.contactInfo}>
+                                        <h3 style={{ fontSize: '1.25rem', whiteSpace: 'nowrap' }}>{contact.name}</h3>
+                                        <p>{contact.role}</p>
+                                        <a href={`tel:${contact.phone.replace(/\s+/g, '')}`} className={styles.phone}>
+                                            <Phone size={18} /> {contact.phone}
+                                        </a>
+                                    </div>
                                 </div>
-                            </div>
-                            <div className={styles.contactInfo}>
-                                <h3>Dr. Vijendra Nath Pathak</h3>
-                                <p>Associate Professor</p>
-                                <p>Department of Liberal Arts</p>
-                                <a href="tel:+917905765113" className={styles.phone}>
-                                    <Phone size={18} /> +91 79057 65113
-                                </a>
-                            </div>
+                            ))}
                         </div>
                     </div>
                 </div>

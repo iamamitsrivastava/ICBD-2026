@@ -373,6 +373,8 @@
     font-weight: 700;
     margin-bottom: 0.5rem;
     letter-spacing: 0.02em;
+    white-space: nowrap;
+    width: max-content;
 }
 
 .profileRole {

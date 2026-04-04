@@ -47,20 +47,28 @@ export function About() {
                 <div className={styles.split}>
                     <ScrollReveal animation="fade-right">
                         <div className={styles.textBlock}>
-                            <span className="text-uppercase" style={{ color: 'var(--color-secondary)', fontWeight: 600 }}>LOCATION</span>
                             <h2>About Parul University</h2>
                             <p>
-                                Parul University (Vadodara, Gujarat) is India&apos;s youngest private university to receive <strong>NAAC A++ accreditation</strong> in the first cycle. With a 150+ acre eco-friendly campus and students from every Indian state and 75+ countries, Parul University is a culturally global destination.
+                                Nestled in the vibrant city of <strong>Vadodara, Gujarat</strong>, Parul University has emerged as a beacon of academic excellence and innovation. With a sprawling <strong>150+ acre eco-friendly campus</strong>, the university is home to students from every Indian state and <strong>75+ countries</strong>, making it one of the most culturally diverse educational destinations in the country.
+                            </p>
+                            <p>
+                                Parul University houses state-of-the-art research facilities, dedicated innovation and incubation centers, and a diverse range of disciplines across multiple faculties. These include the Faculty of Engineering and Technology, Faculty of Management Studies, Faculty of Applied Sciences, Faculty of Computer Science and Applications, Faculty of Pharmacy, Faculty of Medicine, Faculty of Nursing, Faculty of Architecture and Planning, Faculty of Law, Faculty of Liberal Arts, Faculty of Design, Faculty of Commerce, Faculty of Agriculture, and Faculty of Hospitality and Tourism Management, creating a multidisciplinary academic ecosystem that encourages innovation, research, and holistic learning.
                             </p>
 
-                            <h3 className={styles.subheading}>Faculty of Liberal Arts</h3>
-                            <p>
-                                Established in 2016, the Faculty fosters critical thinking through a personalized curriculum grounded in humanities and social sciences, fully aligned with the <strong>National Education Policy (NEP) 2020</strong>.
-                            </p>
 
                             <div className={styles.locationWrapper}>
-                                <MapPin size={20} />
-                                <span>Vadodara, Gujarat, India</span>
+                                <MapPin size={20} className={styles.locationIcon} />
+                                <div className={styles.locationText}>
+                                    <span className={styles.locationLabel}>LOCATION</span>
+                                    <a
+                                        href="https://paruluniversity.ac.in"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className={styles.locationLink}
+                                    >
+                                        Vadodara, Gujarat, India
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </ScrollReveal>
@@ -106,6 +114,34 @@ export function About() {
                         </div>
                     </div>
                 </ScrollReveal>
+
+                {/* Faculty of Liberal Arts Section */}
+                <div className={styles.split} style={{ marginTop: '5rem' }}>
+                    <ScrollReveal delay={200} animation="fade-right">
+                        <div className={styles.imageWrapper}>
+                            <Image
+                                src="/images/gallery-campus-garden.jpg"
+                                alt="Faculty of Liberal Arts"
+                                fill
+                                className={styles.image}
+                                sizes="(max-width: 768px) 100vw, 50vw"
+                            />
+                        </div>
+                    </ScrollReveal>
+
+                    <ScrollReveal animation="fade-left">
+                        <div className={styles.textBlock}>
+                            <span className="text-uppercase" style={{ color: 'var(--color-secondary)', fontWeight: 600 }}>FACULTY</span>
+                            <h2>Faculty of Liberal Arts</h2>
+                            <p>
+                                Established in 2016, the Faculty fosters critical thinking through a personalized curriculum grounded in humanities and social sciences, fully aligned with the <strong>National Education Policy (NEP) 2020</strong>. Supported by experienced faculty members, modern learning facilities, and active research initiatives, the Faculty of Liberal Arts emphasizes analytical reasoning, communication skills, ethical leadership, and social responsibility.
+                            </p>
+                            <p>
+                                Students also benefit from workshops, seminars, internships, and collaborations with industry experts and research institutions, preparing them for diverse careers in academia, media, public administration, policy research, development sectors, and corporate organizations. By integrating traditional academic foundations with contemporary global perspectives, the Faculty of Liberal Arts fosters an inclusive and intellectually vibrant environment where students are empowered to become thoughtful leaders, responsible citizens, and innovative thinkers in an ever-evolving world.
+                            </p>
+                        </div>
+                    </ScrollReveal>
+                </div>
             </div>
         </section>
     );
@@ -116,27 +152,27 @@ export function Objectives() {
         {
             icon: <BookOpen size={24} />,
             title: "Interdisciplinary Impact",
-            text: "To deliberate upon and critically examine case studies, scholarly research, and initiatives that substantiate the transformative implications of interdisciplinary paradigms."
+            text: "To deliberate upon and critically examine case studies, scholarly research, and initiatives that substantiate the transformative implications of interdisciplinary paradigms"
         },
         {
             icon: <Lightbulb size={24} />,
             title: "Critical Thinking",
-            text: "To cultivate analytical rigor and intellectual creativity through the integration of diverse academic epistemologies and perspectives."
+            text: "To cultivate analytical rigor and intellectual creativity through the integration of diverse academic epistemologies and perspectives"
         },
         {
             icon: <LinkIcon size={24} />,
             title: "Bridging Theory & Practice",
-            text: "To reinforce the significance of the liberal arts in synthesizing theoretical constructs with real-world praxis and application."
+            text: "To reinforce the significance of the liberal arts in synthesizing theoretical constructs with real-world praxis and application"
         },
         {
             icon: <Users size={24} />,
             title: "Networking & Collaboration",
-            text: "To facilitate meaningful academic and professional engagement that fosters sustained, cross-sector collaborations among educators, researchers, and industry leaders."
+            text: "To facilitate meaningful academic and professional engagement that fosters sustained, cross-sector collaborations among educators, researchers, and industry leaders"
         },
         {
             icon: <Zap size={24} />,
             title: "Tech & Innovation",
-            text: "To advance the convergence of emerging technologies and the liberal arts in order to catalyze innovation and interdisciplinary advancement."
+            text: "To advance the convergence of emerging technologies and the liberal arts in order to catalyze innovation and interdisciplinary advancement"
         }
     ];
 

@@ -278,8 +278,8 @@
 /* Layout Grid */
 .heroGrid {
     display: grid;
-    grid-template-columns: 1.2fr 0.8fr;
-    gap: 2rem;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
     align-items: center;
 }
 
@@ -289,8 +289,134 @@
     width: 100%;
     display: flex;
     justify-content: center;
-    /* Center it in the right column */
-    padding-right: 0;
+    padding-left: 2rem;
+}
+
+.imageCard {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(250, 204, 21, 0.2);
+    border-radius: 12px;
+    padding: 1.25rem;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.5);
+    transition: transform 0.4s ease, border-color 0.4s ease;
+}
+
+.imageCard:hover {
+    transform: translateY(-12px) scale(1.02);
+    border-color: rgba(250, 204, 21, 0.5);
+    box-shadow: 0 60px 100px rgba(0, 0, 0, 0.7);
+}
+
+.profileWrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.profileImage {
+    transition: opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1), 
+                transform 6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.activeProfile {
+    opacity: 1 !important;
+    transform: scale(1);
+    z-index: 10;
+    visibility: visible;
+}
+
+.inactiveProfile {
+    opacity: 0 !important;
+    transform: scale(1.08); /* Subtle zoom out for deeper transition */
+    z-index: 5;
+    visibility: hidden;
+}
+
+.imageCard:hover .profileImage {
+    transform: scale(1.05);
+}
+
+.profileInfo {
+    text-align: center;
+    position: relative;
+}
+
+.fadeInText {
+    animation: textFadeIn 1s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+@keyframes textFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.profileName {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 0.5rem;
+    font-family: var(--font-heading);
+}
+
+.profileTitle {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 1rem;
+}
+
+.profileBadge {
+    display: inline-block;
+    padding: 0.4rem 1.2rem;
+    background: rgba(250, 204, 21, 0.1);
+    border: 1px solid rgba(250, 204, 21, 0.3);
+    border-radius: 50px;
+    color: #facc15;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 1.5rem;
+}
+
+.heroCardExpanded {
+    max-width: 520px !important;
+    padding: 1.5rem !important;
+}
+
+.profileDots {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.profileDot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.activeDot {
+    background: #facc15;
+    width: 15px;
+    border-radius: 4px;
 }
 
 /* Slider Styles */
@@ -456,4 +582,196 @@
     .statsRow {
         display: none !important;
     }
+}
+
+/* Modal Styles */
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+.modalContent {
+    background: #0f172a;
+    border: 1px solid rgba(250, 204, 21, 0.3);
+    border-radius: 12px;
+    padding: 2.5rem;
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    color: white;
+    /* Optional: Animate in */
+    animation: fadeInUp 0.4s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+.closeButton {
+    position: absolute;
+    top: 1rem;
+    right: 1.25rem;
+    background: transparent;
+    border: none;
+    color: #94a3b8;
+    cursor: pointer;
+    transition: color 0.3s;
+    padding: 0;
+}
+
+.closeButton:hover {
+    color: #f8fafc;
+}
+
+.modalTitle {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #facc15;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+
+.modalSubtitle {
+    color: #cbd5e1;
+    font-size: 0.9rem;
+    margin-bottom: 2rem;
+    line-height: 1.4;
+}
+
+.modalForm {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.formGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.formGroup label {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #f8fafc;
+}
+
+.formGroup input {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 0.75rem 1rem;
+    border-radius: 6px;
+    color: white;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.formGroup input:focus {
+    border-color: #facc15;
+}
+
+.fileInput {
+    padding: 0.5rem 0 !important;
+    background: transparent !important;
+    border: none !important;
+}
+
+.fileInput::file-selector-button {
+    background: rgba(250, 204, 21, 0.1);
+    color: #facc15;
+    border: 1px solid rgba(250, 204, 21, 0.3);
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-right: 1rem;
+    transition: all 0.3s;
+}
+
+.fileInput::file-selector-button:hover {
+    background: rgba(250, 204, 21, 0.2);
+}
+
+.submitModalBtn {
+    background: #facc15;
+    color: #0f172a;
+    border: none;
+    padding: 1rem;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 0.5rem;
+    transition: all 0.3s;
+}
+
+.submitModalBtn:hover:not(:disabled) {
+    background: #eab308;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(250, 204, 21, 0.3);
+}
+
+.submitModalBtn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.successState {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem 1rem;
+    text-align: center;
+    animation: fadeInUp 0.4s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+.successIconWrapper {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: rgba(16, 185, 129, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.successIconWrapper::before {
+    content: '';
+    position: absolute;
+    inset: -15px;
+    border-radius: 50%;
+    background: rgba(16, 185, 129, 0.05);
+    animation: pulseIcon 2s infinite;
+}
+
+.successCheck {
+    color: #10b981;
+}
+
+.successTitle {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #10b981;
+    margin: 0 0 0.5rem 0;
+}
+
+.successSubtitle {
+    color: #cbd5e1;
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+@keyframes pulseIcon {
+    0% { transform: scale(0.8); opacity: 1; }
+    100% { transform: scale(1.2); opacity: 0; }
 }

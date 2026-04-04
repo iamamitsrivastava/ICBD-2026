@@ -32,19 +32,30 @@ export default function Header({ variant = 'transparent' }: HeaderProps) {
     }, []);
 
 
-    const navItems = [
-        { label: 'ABOUT PARUL', href: '/#venue' },
+    interface NavItem {
+        label: string;
+        href: string;
+        children?: { label: string; href: string }[];
+    }
+
+    const navItems: NavItem[] = [
+        { label: 'ABOUT PARUL', href: '/#about-parul' },
         {
             label: 'COMMITTEE', href: '/committee',
             children: [
                 { label: 'Committee', href: '/committee' },
-                { label: 'National Advisory', href: '/committee/national-advisory' },
                 { label: 'International Advisory', href: '/committee/international-advisory' },
+                { label: 'National Advisory', href: '/committee/national-advisory' },
             ]
         },
         { label: 'SPEAKERS', href: '/#speakers' },
-        { label: 'CALL FOR ABSTRACTS', href: '/#themes' },
-        { label: 'PUBLISHING ETHICS', href: '/resources/publishing-ethics' },
+        {
+            label: 'Themes', href: '/#themes',
+            children: [
+                { label: 'Call For Abstract', href: '/#themes' },
+            ]
+        },
+        { label: 'PUBLICATION & ETHICS', href: '/resources/publishing-ethics' },
         { label: 'TRAVELS', href: '/travel' },
         { label: 'SPONSORSHIP', href: '/sponsorship' },
         { label: 'CONTACT', href: '/contact' },

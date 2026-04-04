@@ -74,33 +74,6 @@ export default function RegistrationPage() {
                     </div>
                 </div>
 
-                {/* Call to Action */}
-                <div style={{ textAlign: 'center', padding: '3rem 0' }}>
-                    <h2 style={{ color: '#166534', fontSize: '2rem', fontWeight: 'bold', marginBottom: '1rem' }}>Ready to Join Us?</h2>
-                    <p style={{ color: '#64748b', marginBottom: '2rem' }}>Click the button below to proceed to the external registration portal (Google Form).</p>
-                    <a
-                        href="#"
-                        className="registerButton"
-                        style={{
-                            display: 'inline-flex',
-                            alignItems: 'center',
-                            gap: '0.75rem',
-                            background: '#16a34a',
-                            color: 'white',
-                            padding: '1rem 3rem',
-                            borderRadius: '4px',
-                            fontWeight: '700',
-                            textTransform: 'uppercase',
-                            textDecoration: 'none',
-                            fontSize: '1rem',
-                            letterSpacing: '0.05em',
-                            transition: 'background 0.2s'
-                        }}
-                    >
-                        Register Now &rarr;
-                    </a>
-                </div>
-
             </div>
             <Footer />
         </main>

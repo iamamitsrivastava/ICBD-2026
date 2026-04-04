@@ -1,0 +1,410 @@
+export const conference = {
+  title: "ICBD-2026",
+  subtitle: "International Conference on Bridging Disciplines: Expanding Horizons in Liberal Arts",
+  dates: "12th - 13th June 2026",
+  location: "Parul Institute of Liberal Arts, Parul University, Vadodara, Gujarat, India",
+  host: "Parul University",
+  description: "A premier gathering for academicians, researchers, and professionals to explore the intersections of liberal arts and global challenges.",
+
+  // SECTION 4: THEMES
+  themes: [
+    {
+      title: "Humanities and Cultural Understanding",
+      subthemes: [
+        "Literature and Global Narratives",
+        "Ethics in a Postmodern World",
+        "History and Memory: Revisiting the Past for a Sustainable Future",
+        "Art and Aesthetics in the Digital Age",
+        "Language, Identity, and Power Dynamics",
+      ]
+    },
+    {
+      title: "Social Sciences and Society",
+      subthemes: [
+        "Politics and Governance in a Globalized Era",
+        "Economics and the Human Condition: Beyond Numbers",
+        "Sociology of Technology and Community Transformation",
+        "Gender Studies and Intersectionality",
+        "Psychological Perspectives on Modern Challenges",
+      ]
+    },
+    {
+      title: "Natural Sciences and Sustainability",
+      subthemes: [
+        "Public Health and Pandemic Preparedness",
+        "Philosophical ideologies and the Origins of the Universe",
+      ]
+    },
+    {
+      title: "Digital Humanities and Emerging Technologies",
+      subthemes: [
+        "AI, Ethics, and the Future of Human Creativity",
+        "Data Visualization and Storytelling in Research",
+        "The Role of Digital Archives in Preserving Culture",
+        "Virtual Reality in Education and Empathy Building",
+        "Digital Media and the Evolving Role of Journalism",
+      ]
+    },
+    {
+      title: "Interdisciplinary Innovations",
+      subthemes: [
+        "Blurring Boundaries: The Arts in STEM Education (STEAM)",
+        "Sustainable Development Goals (SDGs): A Multidisciplinary Approach",
+        "Liberal Arts in Shaping Entrepreneurial Mindsets",
+        "Conflict Resolution Through Multidisciplinary Lenses",
+        "Creativity, Collaboration, and Innovation in a Globalized World",
+      ]
+    },
+    {
+      title: "Education and Pedagogy in the Liberal Arts",
+      subthemes: [
+        "Rethinking Curriculum Design for Interdisciplinary Learning",
+        "Liberal Arts in Critical Thinking and Citizenship",
+        "Online Liberal Arts Education Challenges and Opportunities",
+        "Bridges Academic Disciplines",
+        "Assessment Strategies for Interdisciplinary Courses",
+      ]
+    }
+  ],
+
+  // SECTION 5: KEY DATES
+  timeline: [
+    { label: "Abstract Submission Deadline", date: "20th May, 2026" },
+    { label: "Full Paper Submission Deadline", date: "30th May, 2026" },
+    { label: "Registration Deadline", date: "6th June, 2026" },
+    { label: "Conference Date", date: "12th - 13th June 2026" },
+  ],
+
+  // SECTION 5.1: HIGHLIGHTS
+  highlights: [
+    { text: "Selected papers will be published in Scopus Indexed Journals." },
+    { text: "Best Paper Awards for each technical session." },
+    { text: "Conference Proceedings with ISBN number." },
+    { text: "Networking opportunities with international delegates." },
+  ],
+
+  // SECTION 5.2: GUIDELINES
+  guidelines: [
+    { title: "Prepare Abstract", text: "Submit an abstract of 250-300 words with 5-6 keywords. Follow APA 7th Edition style." },
+    { title: "Submit for Review", text: "Send your abstract via email to the conference committee. All submissions undergo double-blind peer review." },
+    { title: "Wait for Acceptance", text: "Notifications of acceptance will be sent via email by the specified date." },
+    { title: "Full Paper Submission", text: "Upon acceptance, submit the full paper (max 6000 words) adhering to formatting guidelines." },
+    { title: "Registration", text: "Complete the registration process after your paper is accepted to confirm your participation." }
+  ],
+
+  // SECTION 6: SPEAKERS (Missing Details)
+  speakers: [
+    {
+      name: "Dr. J Anitha Menon",
+      role: "Head of School - Psychological Sciences",
+      institution: "Curtin University, Dubai",
+      image: "/images/anitha-menon.jpg",
+      details: `I am a Professor of Psychology with extensive leadership experience spanning research, corporate, and education sectors. My journey includes earning a Ph.D. in Psychiatry/Health Psychology from the University of Nottingham, UK. Research and enhancing both employee experiences and overall well-being drive my passion. Over three decades, I've actively engaged in diverse research and service projects relevant to public health, alongside offering mental health services for youth and women. I lead teams in international projects and have contributed over 150 publications to peer-reviewed journals. My work has garnered attention in international media, and I've been honored with several awards. Notably, I received the Labor Day Award from the Government of the Republic of Zambia for Innovation and Excellence, the UK Alumni Award for Professional Achievement, and the African Women Leaders Award in December 2019. Recently, I was honored as the 2022 recipient of the Denmark Gunvald Award for Feminist Research and Service by the International Council of Psychologists.`
+    },
+    {
+      name: "Dr. Lobsang Sangay",
+      role: "Sikyong (Former President) & Senior Visiting Fellow",
+      institution: "Central Tibetan Administration & Harvard Law School",
+      image: "/images/lobsang-sangay.jpg",
+      details: `Dr. Lobsang Sangay is a distinguished legal scholar and the first democratically elected leader to assume the secular political authorities of the Dalai Lama. Serving two terms as Sikyong from 2011 to 2021, he led the Central Tibetan Administration through a historic democratic transition, focusing on education, international diplomacy, and the "Middle Way Approach" for Tibetan autonomy. He holds a Doctorate of Juridical Science from Harvard Law School, where he was the first Tibetan to achieve this rank, and he currently serves there as a Senior Visiting Fellow. A prominent global advocate, he was instrumental in the passage of the Tibetan Policy and Support Act in the U.S. and became the first CTA leader to be formally received at the White House. Today, he continues to lecture globally on international law, democratic constitutionalism, and the geopolitical implications of Tibet’s struggle.`
+    },
+    {
+      name: "Dr. Komal Chawla Verma",
+      role: "Higher Education Leader & Mental Health Expert",
+      institution: "Bahrain",
+      image: "/images/komal-verma.jpg",
+      details: `I am a higher education professional with varied experience in training, teaching, mentoring and as psychologist & well being expert. I have studied in top Indian educational intuitions like Panjab University Chandigarh and also have certifications from NIMANS and IIM Ahmadabad. I have done my PhD under the guidance of India’s top psychologist Prof. S.S. Nathawat studying well- being issues of employees at workplace. 
+      As a faculty I have worked with higher education institutions like Amity University, Leeds MET India Campus, NIFT and GBS. Other than my teaching role I am actively involved in Management Development Programs & Trainings related to Self- awareness, Mental Health, Stress Management, Leadership and Personal and Professional excellence. I have been involved in mentoring students outside class as well.\n\nSCOPUS: http://www.scopus.com/inward/authorDetails.url?authorID=55910911900&partnerID=MN8TOARS\nResearchgate: https://www.researchgate.net/profile/Komal-Verma-7\nORCID: https://orcid.org/0000-0002-2652-8298\nGoogle Scholar: https://scholar.google.co.in/citations?hl=en&user=dWDCMZ8AAAAJ`
+    },
+    {
+      name: "Dr. Al-ryanne Gatcho, PhD",
+      role: "Associate Professor",
+      institution: "Hunan Institute of Science and Technology, China",
+      image: "/images/al-ryanne-gatcho-v3.png",
+      details: `Dr. Al-ryanne G. Gatcho is an Associate Professor at the Hunan Institute of Science and Technology in Yueyang City, Hunan Province, China. He is a distinguished Filipino educator and scholar with extensive research in literature, language studies, and education. Known for his profound contributions to both academia and creative writing, he recently won First Prize in the prestigious Carlos Palanca Memorial Awards for Literature under the Short Story category for his work "Goat". His pedagogical approach emphasizes continuous innovation and bridging cultural narratives.`
+    },
+  ],
+
+  // SECTION 9: FEES (Missing Amounts)
+  registration: {
+    categories: [
+      { category: "Students (within Parul University)", fee: "₹ 750" },
+      { category: "Faculty (within Parul University)", fee: "₹ 900" },
+      { category: "Students (Outside)", fee: "₹ 900" },
+      { category: "Academician / Faculty (Outside)", fee: "₹ 1200" },
+      { category: "Industry / NGO (Outside)", fee: "₹ 1500" },
+      { category: "International Delegates", fee: "$ 25" },
+    ],
+    accountDetails: {
+      bank: "Bank of Baroda",
+      accountName: "Parul University Conference Account",
+      accountNumber: "34560100001234",
+      ifsc: "BARB0PARULX",
+      swift: "BARBINBBXXX",
+    }
+  },
+
+  // SECTION 10: COMMITTEES
+  committees: {
+    president: {
+      name: "Dr. Devanshu Patel",
+      role: "Chief Patron",
+      affiliation: "President, Parul University",
+      image: "/images/president.jpg" // Added image path
+    },
+    vicePresidents: [
+      {
+        name: "Dr. Geetika Patel",
+        role: "Co-Chief Patron",
+        affiliation: "Vice President, Parul University",
+        image: "/images/geetika-patel.jpg"
+      },
+      {
+        name: "Dr. Parul Patel",
+        role: "Co-Chief Patron",
+        affiliation: "Vice President, Parul University",
+        image: "/images/parul-patel.jpg"
+      },
+      {
+        name: "Dr. Komal Patel",
+        role: "Co-Chief Patron",
+        affiliation: "Vice President, Parul University",
+        image: "/images/komal-patel-v2.png"
+      }
+    ],
+    nationalAdvisory: [
+      {
+        name: "Shri Ram Madhav",
+        role: "President, India Foundation",
+        details: "Ram Madhav is a prominent Indian political thinker, strategist, and leader associated with the Bharatiya Janata Party (BJP) and previously with the Rashtriya Swayamsevak Sangh (RSS). He is known for his deep understanding of national security, foreign policy, and political strategy.\n\nBefore entering active politics, he served as a senior functionary in the RSS, where he played a key role in shaping ideological and organizational strategies.",
+        image: "/images/ram-madhav-new.jpg"
+      },
+      {
+        name: "Dr. Hemang Joshi",
+        role: "MP",
+        affiliation: "Lok Sabha, Vadodara",
+        image: "/images/hemang-joshi.jpg"
+      },
+      {
+        name: "Prof. Yogesh Singh",
+        role: "AICTE Chairman",
+        affiliation: "Delhi University",
+        image: "/images/yogesh-singh.jpg"
+      },
+      {
+        name: "Prof. Bhagwati Prakash Sharma",
+        role: "Vice Chancellor",
+        affiliation: "Pacific Academy of Higher Education and Research, Udaipur",
+        image: "/images/bhagwati-prakash-sharma.jpg"
+      },
+      {
+        name: "Dr. Jigar Inamdar",
+        role: "Chairman",
+        affiliation: "Ramanujan College, DU, University, Delhi",
+        image: "/images/jigar-inamdar.png"
+      },
+      {
+        name: "Dr. Rajan Welukar",
+        role: "Vice Chancellor",
+        affiliation: "ATLAS SkillTech University",
+        image: "/images/rajan-welukar.jpg"
+      },
+      {
+        name: "Prof. Bhalchandra Mahadeo Bhanage",
+        role: "Vice Chancellor",
+        affiliation: "MS University, Baroda",
+        image: "/images/bhalchandra.png"
+      },
+      {
+        name: "Dr. Krishna Kant Dave",
+        role: "Vice Chancellor",
+        affiliation: "Bahra University",
+        image: "/images/krishna-kant-dave.jpg"
+      },
+      {
+        name: "Prof. Suresh Kumar Agarwal",
+        role: "Vice Chancellor",
+        affiliation: "Maharshi Dayanand Saraswati University",
+        image: "/images/suresh-kumar-agarwal.png"
+      },
+      {
+        name: "Prof. Lajwanti Chatani",
+        role: "Former Head of Political Science Department of MSU",
+        affiliation: "Convenor Contemporary Centre On Political Theory M.S. University, Vadodara .",
+        image: "/images/lajwanti-chatani-new.png"
+      },
+      {
+        name: "Prof. Vijay Chechi",
+        role: "Dean",
+        affiliation: "School of Education, Lovely Professional University, Punjab",
+        image: "/images/vijay-chechi.png"
+      },
+      {
+        name: "Dr. Krishan Kumar Soni",
+        role: "Associate Professor",
+        affiliation: "Professor. Department: PSYCHIATRY",
+        image: "/images/krishan-kumar-soni-hd.png"
+      },
+      {
+        name: "Dr. Krishna Mishra",
+        role: "Associate Professor",
+        affiliation: "Associate Professor (Clinical Psychology) at National Forensic Sciences University.",
+        image: "/images/krishna-mishra.jpg"
+      },
+      {
+        name: "Dr. Akash Deep Muni",
+        role: "Dean",
+        affiliation: "Amity University, Kolkata",
+        image: "/images/akash-deep-muni.png"
+      },
+      {
+        name: "Dr. Hitesh Raviya",
+        role: "Hod, Department of English",
+        affiliation: "Department of English, M.S. University, Vadodara",
+        image: "/images/hitesh-raviya.png"
+      },
+      {
+        name: "Dr. Manu Sharma",
+        role: "HOD, Department of History",
+        affiliation: "GNDU, Amritsar",
+        image: "/images/manu-sharma-v3.png"
+      },
+      {
+        name: "Prof. Ajoy Batta",
+        role: "CoS and HoD",
+        affiliation: "Department of English, Lovely Professional University",
+        image: "/images/prof-ajoy-batta.jpg"
+      },
+      {
+        name: "Prof. Maheswar Satpathy",
+        role: "Associate Professor",
+        affiliation: "Global Consortium of Global Health Actors [Global-ALT]",
+        image: "/images/maheswar-satpathy.jpg"
+      },
+      {
+        name: "Professor Parimal H. Vyas",
+        role: "Vice Chancellor",
+        affiliation: "AURO University",
+        image: "/images/professor-parimal.jpg"
+      },
+    ],
+    internationalAdvisory: [
+      {
+        name: "Dr. J Anitha Menon",
+        role: "Head of School - Psychological Sciences",
+        affiliation: "Curtin University, Dubai",
+        image: "/images/anitha-menon.jpg"
+      },
+      {
+        name: "Dr. Lobsang Sangay",
+        role: "Sikyong (Former President) & Senior Visiting Fellow",
+        affiliation: "Central Tibetan Administration & Harvard Law School",
+        image: "/images/lobsang-sangay.jpg"
+      },
+      {
+        name: "Dr. Komal Chawla Verma",
+        role: "Higher Education Leader & Mental Health Expert",
+        affiliation: "Bahrain",
+        image: "/images/komal-verma.jpg"
+      },
+      {
+        name: "Dr. Al-ryanne Gatcho, PhD",
+        role: "Associate Professor",
+        affiliation: "Hunan Institute of Science and Technology, China",
+        image: "/images/al-ryanne-gatcho-v3.png"
+      }
+    ],
+    chiefPatrons: [
+      {
+        name: "Dr. K. N. Madhusoodanan",
+        role: "Patron",
+        affiliation: "Provost, Parul University",
+        image: "/images/provost.jpg"
+      },
+      {
+        name: "Dr. Kunjal Sinha",
+        role: "Co-Patron",
+        affiliation: "Pro Vice-Chancellor, Parul University",
+        image: "/images/kunjal-sinha-v3.png"
+      }
+    ],
+    patrons: [], // Removed as per request, merged into Chief Patrons or Conveners if needed, but keeping empty for structure
+    secretaries: [
+      {
+        name: "Prof. Dr. Digvijay Pandya",
+        role: "Conference Director",
+        affiliation: "Dean, Parul University", // Assuming Parul University
+        image: "/images/digvijay-pandya.jpg"
+      }
+    ],
+    conveners: [
+      {
+        name: "Dr. Vijendra Nath Pathak",
+        role: "Convener",
+        affiliation: "Parul University",
+        image: "/images/vijendra-pathak.jpg"
+      }
+    ],
+    coConveners: [
+      {
+        name: "Dr. Ashok Biswas",
+        role: "Co-Convener",
+        affiliation: "Parul University",
+        image: "/images/ashok-biswas-v2.png"
+      },
+      {
+        name: "Mr. Ashish Kotadiya",
+        role: "Co-Convener",
+        affiliation: "Parul University",
+        image: "/images/ashish-kotadiya.jpg"
+      }
+    ],
+    advisory: [],
+    // Text-only lists
+    registrationCommittee: [
+      "Dr. Piyush Trivedi (Lead)",
+      "Mr. Harsh Jain",
+      "Mr. Dipesh Gokhale",
+      "Ms. Gargi Sharma",
+      "Mr. Ranjit Mandal",
+      "Ms. Ankita Gupta",
+      "Dr. Venkatesh Arvindh",
+      "Dr. Vijayalaxmi Kore",
+    ],
+    scientificCommittee: [
+      "Dr. Pathikkumar J. Bhatt(Lead)",
+      "Dr. Shobhana Singh",
+      "Dr. Chimat Ladol",
+      "Dr. Megha Taragi",
+      "Ms. Shefali Upadhyay",
+      "Dr. Maninder Kumar Singh",
+      "Dr. Ayesha Fatma",
+      "Dr. Rajesh Kumar",
+    ],
+    hospitality: [
+      "Dr. Dayal Singh (Lead)",
+      "Dr. Prajakta s Ankalikar",
+      "Dr. Manoj Vimal",
+      "Dr. Rajni Gupta",
+      "Dr. Chander Shekhar",
+      "Ms. Tanya Mandloi",
+      "Ms. Shaili Singh",
+      "Ms. Hetanshi Bhatt",
+    ],
+    mediaCommittee: [
+      "Mr. Ashish Kotadiya(Lead)",
+      "Dr. Ashish Dubey",
+      "Mr. Neel Desai",
+      "Ms. Neha Gautam",
+    ],
+    culturalCommittee: [],
+    organizingSecretaries: [],
+    iahpExecutiveCommittee: [],
+  },
+
+  contact: {
+    email: "contact@icbd2026.com", // Placeholder
+    phone: "+91 7905765113", // Placeholder
+    address: "Parul Institute of Liberal Arts, Parul University, Vadodara, Gujarat, India"
+  }
+};

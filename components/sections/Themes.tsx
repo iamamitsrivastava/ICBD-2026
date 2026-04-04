@@ -1,5 +1,5 @@
 'use client';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { CheckCircle2 } from 'lucide-react';
 import { conference } from '@/data/conference';
 import styles from './Themes.module.css';
@@ -7,14 +7,6 @@ import ScrollReveal from '@/components/ui/ScrollReveal';
 
 export default function Themes() {
     const [activeTab, setActiveTab] = useState(0);
-
-    useEffect(() => {
-        const interval = setInterval(() => {
-            setActiveTab((prev) => (prev + 1) % conference.themes.length);
-        }, 3000);
-
-        return () => clearInterval(interval);
-    }, [activeTab]);
 
     return (
         <section className="section" id="themes">

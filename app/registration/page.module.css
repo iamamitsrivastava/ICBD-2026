@@ -115,6 +115,27 @@
     margin: 0;
 }
 
+.instructionBanner {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+    padding: 1rem 2rem;
+    background: rgba(250, 204, 21, 0.1);
+    border: 1px solid rgba(250, 204, 21, 0.3);
+    color: #f8fafc;
+    border-radius: 99px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.instructionIcon {
+    color: #FACC15;
+}
+
 .tableWrapper {
     overflow-x: auto;
 }
@@ -122,24 +143,51 @@
 .feeTable {
     width: 100%;
     border-collapse: collapse;
-    text-align: left;
-    min-width: 600px;
+    text-align: center;
+    min-width: 800px;
 }
 
 .feeTable th,
 .feeTable td {
-    padding: 1.25rem 1.5rem;
-    border-bottom: 1px solid #e2e8f0;
+    padding: 1rem 0.5rem;
+    border: 1px solid #e2e8f0;
+    vertical-align: middle;
 }
 
 .feeTable thead th {
-    background: #f1f5f9;
-    /* Slate 100 */
-    color: #0F172A;
+    background: #f8fafc;
+    color: #1e293b;
     font-weight: 700;
+    font-size: 0.85rem;
     text-transform: uppercase;
-    font-size: 0.9rem;
     letter-spacing: 0.05em;
+    padding: 1.25rem 1rem;
+}
+
+.categoryHeader {
+    text-align: center !important;
+    background: #0F172A !important;
+    color: white !important;
+    border-right: 2px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+.groupHeader {
+    background: #1e293b !important;
+    color: white !important;
+    font-size: 0.9rem !important;
+    border-bottom: 3px solid #FACC15 !important;
+    letter-spacing: 0.1em !important;
+}
+
+.groupHeaderAttending {
+    border-right: 3px solid #0F172A !important;
+}
+
+.subHeader {
+    background: #f1f5f9 !important;
+    color: #64748b !important;
+    font-size: 0.75rem !important;
+    border-bottom: 2px solid #e2e8f0 !important;
 }
 
 .feeTable tbody tr:hover {
@@ -151,14 +199,90 @@
 }
 
 .categoryCell {
-    font-weight: 600;
+    font-weight: 700;
+    color: #0F172A;
+    text-align: left;
+    background: #f8fafc;
+}
+
+.categoryName {
+    display: block;
+    font-size: 1rem;
     color: #0F172A;
 }
 
-.feeCell {
-    font-weight: 700;
-    color: #C5192D;
-    /* Accent Red or potentially Gold */
+.feeGridButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 0.5rem;
+    background: white;
+    border: 1.5px solid #e2e8f0;
+    color: #1e293b;
+    border-radius: 12px;
+    font-weight: 800;
+    font-size: 0.95rem;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    width: 100%;
+    height: 3.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+    position: relative;
+    overflow: hidden;
+}
+
+.feeText {
+    display: inline-block;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 2;
+}
+
+.feeGridButton::after {
+    content: "PAY NOW \2192";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    color: #0F172A;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+    z-index: 1;
+}
+
+.feeGridButton:hover {
+    background: #FACC15;
+    color: #0F172A;
+    border-color: #FACC15;
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 10px 20px -5px rgba(250, 204, 21, 0.5);
+}
+
+.feeGridButton:hover .feeText {
+    transform: translateY(-100%);
+    opacity: 0;
+}
+
+.feeGridButton:hover::after {
+    top: 0;
+}
+
+/* Column highlighting */
+.attendingCol {
+    background-color: rgba(241, 245, 249, 0.4);
+}
+
+.contributorCol {
+    background-color: transparent;
+}
+
+.onlineCol {
+    background-color: rgba(250, 204, 21, 0.03);
 }
 
 .ctaSection {
@@ -371,6 +495,29 @@
     font-weight: 600;
 }
 
+.downloadFormLink {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-top: 0.75rem;
+    padding: 0.45rem 1rem;
+    background: #FACC15;
+    color: #0F172A;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 0.8rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(250, 204, 21, 0.3);
+}
+
+.downloadFormLink:hover {
+    background: #0F172A;
+    color: #FACC15;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
 .emailLink {
     color: #C5192D;
     text-decoration: none;
@@ -432,11 +579,12 @@
     .feeTable tr {
         display: flex;
         flex-direction: column;
-        margin-bottom: 1.5rem;
+        margin-bottom: 2rem;
         border: 1px solid #e2e8f0;
         border-radius: 8px;
         background: white;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        overflow: hidden;
     }
 
     .feeTable tr:last-child {
@@ -445,18 +593,26 @@
 
     .feeTable td {
         display: flex;
-        justify-content: space-between;
-        align-items: center;
+        flex-direction: column;
+        align-items: flex-start;
         padding: 1rem 1.25rem;
         border-bottom: 1px solid #f1f5f9;
         font-size: 0.95rem;
+        gap: 0.5rem;
+    }
+
+    .feeTable td:first-child {
+        background: #0F172A;
+        color: white;
+    }
+    
+    .feeTable td:first-child .categoryName {
+        color: white;
+        font-size: 1.2rem;
     }
 
     .feeTable td:last-child {
         border-bottom: none;
-        background: #f8fafc;
-        border-radius: 0 0 8px 8px;
-        justify-content: center;
     }
 
     .feeTable td::before {
@@ -465,15 +621,14 @@
         color: #64748b;
         font-size: 0.85rem;
         text-transform: uppercase;
-        margin-right: 1rem;
+    }
+
+    .feeTable td:first-child::before {
+        color: #D4AF37;
     }
 
     .categoryCell {
-        text-align: right;
-    }
-
-    .actionCell::before {
-        display: none;
+        text-align: left;
     }
 
     .payLink {

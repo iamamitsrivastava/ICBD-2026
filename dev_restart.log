@@ -1,0 +1,15 @@
+
+> icbd-2026@0.1.0 dev
+> node dev.mjs
+
+[dev.mjs] 🚀 Starting Next.js dev server on http://127.0.0.1:3000
+▲ Next.js 16.1.6 (Turbopack)
+- Local:         http://127.0.0.1:3000
+- Network:       http://127.0.0.1:3000
+- Experiments (use with caution):
+  · optimizePackageImports
+
+✓ Starting...
+
+[dev.mjs] ✅ Next.js server exited cleanly.
+

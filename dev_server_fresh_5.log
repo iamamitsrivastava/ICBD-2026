@@ -11,3 +11,6 @@
 ✓ Ready in 5.8s
 ○ Compiling / ...
  GET / 200 in 7.0s (compile: 6.5s, render: 480ms)
+
+[dev.mjs] ✅ Next.js server exited cleanly.
+

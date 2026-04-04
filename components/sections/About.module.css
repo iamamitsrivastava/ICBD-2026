@@ -33,11 +33,41 @@
 
 .locationWrapper {
     display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    margin-top: 1.5rem;
+    align-items: flex-start;
+    gap: 0.75rem;
+    margin-top: 2rem;
+}
+
+.locationIcon {
+    margin-top: 3px;
+    color: var(--color-secondary);
+}
+
+.locationText {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.locationLabel {
+    color: var(--color-secondary);
+    font-weight: 700;
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.locationLink {
     color: var(--color-text-muted);
+    font-size: 1rem;
     font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.locationLink:hover {
+    color: var(--color-primary);
+    text-decoration: underline;
 }
 
 

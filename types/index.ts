@@ -32,6 +32,7 @@ export interface CommitteeMember {
     role?: string;
     affiliation?: string;
     image?: string;
+    details?: string;
 }
 
 export interface TimelineItem {

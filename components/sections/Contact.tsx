@@ -64,29 +64,24 @@ export default function Contact() {
                             <h3 className={styles.subHeading}>Primary Contact :</h3>
 
                             <div className={styles.contactItem}>
-                                <h4>Conference Chairman</h4>
-                                <p>Prof. Anand Kumar (+91-9415202167)</p>
+                                <h4>Conference Director</h4>
+                                <p>Dr.Digvijay Pandya (digvijay.pandya29007@paruluniversity.ac.in)</p>
                             </div>
 
                             <div className={styles.contactItem}>
-                                <h4>Organizing Secretary</h4>
-                                <p>Dr. Kranti K. Srivastava (+91-7065559559)</p>
+                                <h4>CONTACT</h4>
+                                <p style={{ whiteSpace: 'nowrap' }}>Dr. Vijendra Nath Pathak (+91-7905765113)</p>
+                                <p style={{ whiteSpace: 'nowrap' }}>Dr. Ashok Biswas (+91-8306849669)</p>
+                                <p style={{ whiteSpace: 'nowrap' }}>Mr. Ashish Kotadiya (+91-8155883094)</p>
                             </div>
 
                             <div className={styles.contactItem}>
                                 <h4>E-mail :</h4>
                                 <p>
-                                    <a href="mailto:2303051240028@paruluniversity.ac.in" style={{ color: '#f0c040', wordBreak: 'break-all' }}>
-                                        2303051240028@paruluniversity.ac.in
+                                    <a href="mailto:icbd2026@paruluniversity.ac.in" style={{ color: '#f0c040', wordBreak: 'break-all' }}>
+                                        icbd2026@paruluniversity.ac.in
                                     </a>
                                 </p>
-                            </div>
-                        </div>
-
-                        <div className={styles.infoBlock}>
-                            <h3 className={styles.subHeading}>For Sponsorship :</h3>
-                            <div className={styles.contactItem}>
-                                <p>Dr. Vijendra Nath Pathak (+91-7905765113)</p>
                             </div>
                         </div>
                     </div>

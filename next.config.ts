@@ -1,6 +1,11 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  /* Hide the Next.js 'N' development indicator icon */
+  devIndicators: {
+    appIsrStatus: false,
+  } as any,
+
   /* Performance Optimizations for 1000+ Concurrent Users */
 
   // Compression - reduces payload size by 60-80%
@@ -15,6 +20,13 @@ const nextConfig: NextConfig = {
     dangerouslyAllowSVG: true,
     contentDispositionType: 'attachment',
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'www.vsuraj.ac.in',
+        pathname: '/**',
+      },
+    ],
   },
 
   // Production optimizations
@@ -99,7 +111,6 @@ const nextConfig: NextConfig = {
   // Experimental features for better performance
   experimental: {
     optimizeCss: false, // Optimize CSS loading
-    // optimizePackageImports removed - was causing Turbopack HMR corruption with lucide-react
   },
 };
 
