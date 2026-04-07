@@ -61,8 +61,8 @@
     /* Key for absolute positioning children */
     font-family: var(--font-heading);
     font-weight: 700;
-    font-size: 2.5rem;
-    /* Increased size significantly */
+    font-size: 1.5rem;
+    /* Reduced further from 2rem to ensure fit on smaller desktops */
     color: white;
     text-decoration: none;
     line-height: 1;
@@ -75,32 +75,22 @@
 }
 
 .logoImageWrapper {
-    position: absolute;
-    right: 100%;
-    /* Push to the left of the container */
-    top: 50%;
-    transform: translateY(-50%);
-    margin-right: 2.5rem;
-    /* Gap between logo and text */
     display: flex;
     align-items: center;
-    pointer-events: none;
-    /* Let clicks pass through if needed, though it's inside a Link */
+    margin-right: 1.5rem; /* Gap between logo and text */
+    flex-shrink: 0;
 }
 
 .logoImage {
-    height: 40px;
+    height: 48px;
     width: auto;
     object-fit: contain;
-    /* filter: brightness(0) invert(1); removed to show original colors */
-    /* opacity: 0.9; removed to show original colors */
 }
 
 .nav {
     display: flex;
     align-items: center;
-    gap: 2rem; /* space between navbar words */
-    /* Structured spacing */
+    gap: 1.5rem; /* Reduced from 2rem for better fit */
     margin-left: auto;
     padding-left: 1rem;
 }
@@ -149,11 +139,12 @@
     background: linear-gradient(135deg, #d4af37 0%, #aa8c2c 100%);
     /* Gold gradient */
     color: white;
-    padding: 0.75rem 2rem;
+    padding: 0.6rem 1.25rem;
+    /* Reduced padding for better fit */
     border-radius: 4px;
     font-weight: 800;
     text-transform: uppercase;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     letter-spacing: 0.05em;
     text-decoration: none;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -351,9 +342,28 @@
     display: block;
 }
 
-@media (max-width: 1150px) {
+@media (max-width: 1400px) {
     .nav {
-        display: none;
+        gap: 1rem;
+    }
+    
+    .logo {
+        font-size: 1.4rem;
+    }
+
+    .logoImage {
+        height: 36px;
+    }
+
+    .cta {
+        padding: 0.6rem 1rem;
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 1250px) {
+    .nav {
+        display: none !important; /* Force hide to prevent overflow */
     }
 
     .mobileMenuBtn {
@@ -527,10 +537,14 @@
     }
 
     .logo {
-        font-size: 1.5rem;
+        font-size: 1.25rem;
+    }
+
+    .logoImage {
+        height: 32px;
     }
 
     .logoImageWrapper {
-        display: none;
+        margin-right: 0.75rem;
     }
 }
